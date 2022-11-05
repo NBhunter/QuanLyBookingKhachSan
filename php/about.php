@@ -9,7 +9,7 @@
 
 	<title>About hotel</title>
 	
-	<link rel="icon" type="image/x-icon" href="img/ec.png">
+	<link rel="icon" type="image/x-icon" href="../img/ec.png">
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Cardo:700" rel="stylesheet">
@@ -18,10 +18,10 @@
 	<!-- Bootstrap -->
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../css/style.css">
 
 	<!-- Custom stlylesheet -->
-	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<link type="text/css" rel="stylesheet" href="../css/style.css" />
 
 	<script src="https://kit.fontawesome.com/97d6784897.js" crossorigin="anonymous"></script>
 
@@ -34,17 +34,17 @@
   <div class="row">
     <div class="col-sm-4">
       <h1>CONTACT</h1>
-	   <img src="img/about/letan.jpg" class="card-img-top" alt="ava" style="width: 100%;">
+	   <img src="../img/about/letan.jpg" class="card-img-top" alt="ava" style="width: 100%;">
       <h5>HOTLINE: 0941747540 - ZALO:098848653</h5>
 	  <h5>EMAIL: kienan@gmail.com</h5>
       <h3>TIỆN ÍCH KHÁCH SẠN</h3>
-	  <img src="img/about/nhahang.jpg" class="card-img-top" alt="ava" style="width: 100%;">
+	  <img src="../img/about/nhahang.jpg" class="card-img-top" alt="ava" style="width: 100%;">
 		 <p>Nghỉ ngơi sau một chuyến đi xa tại phòng nghỉ Khách sạn, 
 			 Quý khách hãy tìm đến với dư vị ẩm thực phong phú của Nhà hàng Kiến An. 
 			 Tại đây với Nhà hàng Á và Nhà hàng Âu,
 			 Quý khách có thể lựa chọn cho mình nhiều phong cách ẩm thực khác nhau
 			 và các món đặc sản An Giang đến những món ăn nổi tiếng Việt Nam </p>
-		<img src="img/about/beboi.jpg" class="card-img-top" alt="ava" style="width: 100%;">
+		<img src="../img/about/beboi.jpg" class="card-img-top" alt="ava" style="width: 100%;">
 		<p>Bể bơi Hoàng Sơn hiện diện với những làn nước xanh như một nét tô điểm duyên dáng cho Khách sạn. 
 			Sau những giờ nghỉ ngơi tại phòng nghỉ Khách sạn và thưởng thức các món ăn độc đáo, 
 			Quý khách sẽ thư giãn với làn nước trong vắt, mát lạnh của Bể bơi. </p>
@@ -55,7 +55,7 @@
     </div>
     <div class="col-sm-8">
       <h1>INTRODUCE</h1>
-	  <img src="img/about/khachsan.jpg" style="width: 100%;">
+	  <img src="../img/about/khachsan.jpg" style="width: 100%;">
 		<br></br>
       <h5>Thành lập: ngày 15, tháng 7, năm 2017</h5>
       <p>Khách sạn Kiến An tọa lạc gần quảng trường Trưng Nữ Vương  - Nằm giữa trung tâm kinh tế và văn hóa của Thành Phố Long Xuyên, 
@@ -67,9 +67,9 @@
 		sân Tennis và các khu vui chơi giải trí khác được quy tụ trong một khuôn viên rộng lớn gần 15.000 m2 .</p>
       <h2>ROOM</h2>
 	  <div class='row'>
-		<div class='col-4'><img src="img/about/phongdon.jpg" class="card-img-top" alt="ava" style="width: 100%;"></div>
-		<div class='col-4'><img src="img/about/phongdoi.jpg" class="card-img-top" alt="ava" style="width: 100%;"></div>
-		<div class='col-4'><img src="img/about/phong3.jpg" class="card-img-top" alt="ava" style="width: 100%;"></div>
+		<div class='col-4'><img src="../img/about/phongdon.jpg" class="card-img-top" alt="ava" style="width: 100%;"></div>
+		<div class='col-4'><img src="../img/about/phongdoi.jpg" class="card-img-top" alt="ava" style="width: 100%;"></div>
+		<div class='col-4'><img src="../img/about/phong3.jpg" class="card-img-top" alt="ava" style="width: 100%;"></div>
 		</div>
       <p>Khách Kiến An sạn được thiết kế bao gồm 12 tầng và 214 phòng các loại với nội thất cao cấp và sang trọng.
 		Tất cả các phòng nghỉ của Khách sạn đều có cửa sổ lớn nhìn ra không gian bên ngoài với xa xa là khung cảnh non nước hữu tình đầy thơ mộng và cảnh đẹp lung linh của Thành phố Long Xuyên khi màn đêm buông xuống để mặc những ánh đèn đua nhau thắp lên. Hơn thế nữa,  

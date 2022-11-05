@@ -2,10 +2,10 @@
 -- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: localhost
--- Thời gian đã tạo: Th10 04, 2022 lúc 08:32 AM
--- Phiên bản máy phục vụ: 5.7.25
--- Phiên bản PHP: 7.1.26
+-- Host: localhost
+-- Generation Time: Nov 05, 2022 at 06:58 AM
+-- Server version: 5.7.25
+-- PHP Version: 7.1.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `booking`
+-- Database: `booking`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `datphong`
+-- Table structure for table `datphong`
 --
 
 CREATE TABLE `datphong` (
@@ -39,7 +39,7 @@ CREATE TABLE `datphong` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `donphong_ct`
+-- Table structure for table `donphong_ct`
 --
 
 CREATE TABLE `donphong_ct` (
@@ -54,7 +54,7 @@ CREATE TABLE `donphong_ct` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `khachhang`
+-- Table structure for table `khachhang`
 --
 
 CREATE TABLE `khachhang` (
@@ -69,7 +69,7 @@ CREATE TABLE `khachhang` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `nguoidung`
+-- Table structure for table `nguoidung`
 --
 
 CREATE TABLE `nguoidung` (
@@ -83,10 +83,17 @@ CREATE TABLE `nguoidung` (
   `hinhanh` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `nguoidung`
+--
+
+INSERT INTO `nguoidung` (`id`, `hoten`, `sodienthoai`, `email`, `matkhau`, `loainguoidung`, `trangthai`, `hinhanh`) VALUES
+(1, 'abc', 12345, 'abc@gmail.com', 'abc', '1', 1, '');
+
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `phong`
+-- Table structure for table `phong`
 --
 
 CREATE TABLE `phong` (
@@ -97,94 +104,94 @@ CREATE TABLE `phong` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `datphong`
+-- Indexes for table `datphong`
 --
 ALTER TABLE `datphong`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_khachhang` (`id_khachhang`);
 
 --
--- Chỉ mục cho bảng `donphong_ct`
+-- Indexes for table `donphong_ct`
 --
 ALTER TABLE `donphong_ct`
   ADD KEY `idkhachhang` (`id`);
 
 --
--- Chỉ mục cho bảng `khachhang`
+-- Indexes for table `khachhang`
 --
 ALTER TABLE `khachhang`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `nguoidung`
+-- Indexes for table `nguoidung`
 --
 ALTER TABLE `nguoidung`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `phong`
+-- Indexes for table `phong`
 --
 ALTER TABLE `phong`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `datphong`
+-- AUTO_INCREMENT for table `datphong`
 --
 ALTER TABLE `datphong`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `khachhang`
+-- AUTO_INCREMENT for table `khachhang`
 --
 ALTER TABLE `khachhang`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `nguoidung`
+-- AUTO_INCREMENT for table `nguoidung`
 --
 ALTER TABLE `nguoidung`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `phong`
+-- AUTO_INCREMENT for table `phong`
 --
 ALTER TABLE `phong`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `datphong`
+-- Constraints for table `datphong`
 --
 ALTER TABLE `datphong`
   ADD CONSTRAINT `id_khachhang` FOREIGN KEY (`id_khachhang`) REFERENCES `khachhang` (`id`),
   ADD CONSTRAINT `id_phong` FOREIGN KEY (`id`) REFERENCES `phong` (`id`);
 
 --
--- Các ràng buộc cho bảng `donphong_ct`
+-- Constraints for table `donphong_ct`
 --
 ALTER TABLE `donphong_ct`
   ADD CONSTRAINT `idkhachhang` FOREIGN KEY (`id`) REFERENCES `khachhang` (`id`),
   ADD CONSTRAINT `idphong` FOREIGN KEY (`id`) REFERENCES `phong` (`id`);
 
 --
--- Các ràng buộc cho bảng `khachhang`
+-- Constraints for table `khachhang`
 --
 ALTER TABLE `khachhang`
   ADD CONSTRAINT `id_nguoidung` FOREIGN KEY (`id`) REFERENCES `nguoidung` (`id`);
 
 --
--- Các ràng buộc cho bảng `phong`
+-- Constraints for table `phong`
 --
 ALTER TABLE `phong`
   ADD CONSTRAINT `idnguoidung` FOREIGN KEY (`id`) REFERENCES `nguoidung` (`id`);

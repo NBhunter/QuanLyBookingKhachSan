@@ -33,7 +33,7 @@
 </head>
 
 <body>
-		<?php include 'navbar.php'; ?>
+		<?php include 'php/navbar.php'; ?>
 <div class='main'>
 	<div class='container'align='center'>
 		<div class="w3-content w3-section" style="max-width:500px">
@@ -46,7 +46,7 @@
 	</div>
 </div>
 
-		<?php include 'footer.php'; ?>
+		<?php include 'php/footer.php'; ?>
 <script>
 var slideIndex = 0;
 carousel();

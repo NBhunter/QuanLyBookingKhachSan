@@ -9,7 +9,7 @@
 
 	<title>Booking</title>
 	
-	<link rel="icon" type="image/x-icon" href="img/mon.ico">
+	<link rel="icon" type="image/x-icon" href="../img/mon.ico">
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Cardo:700" rel="stylesheet">
@@ -18,10 +18,10 @@
 	<!-- Bootstrap -->
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../css/style.css">
 
 	<!-- Custom stlylesheet -->
-	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<link type="text/css" rel="stylesheet" href="../css/style.css" />
 
 	<script src="https://kit.fontawesome.com/97d6784897.js" crossorigin="anonymous"></script>
 
@@ -103,7 +103,7 @@
 			<div class="row">
 			  <div class="col-4">
 				<div class="card">
-				  <img src="img/mem/RB.png" alt="Băng" style="width:35%">
+				  <img src="../img/mem/RB.png" alt="Băng" style="width:35%">
 				  <div class="container">
 					<h3>Nguyễn Ra Băng</h3>
 					<p class="title">CEO</p>
@@ -118,7 +118,7 @@
 
 			  <div class="col-4">
 				<div class="card">
-				  <img src="img/mem/HK.png" alt="khang" style="width:35%">
+				  <img src="../img/mem/HK.png" alt="khang" style="width:35%">
 				  <div class="container">
 					<h3>Thái Hoàng Khang</h3>
 					<p class="title">Art Director</p>
@@ -133,7 +133,7 @@
 			  
 			  <div class="col-4">
 				<div class="card">
-				  <img src="img/mem/MN.png" alt="ngọc" style="width:35%">
+				  <img src="../img/mem/MN.png" alt="ngọc" style="width:35%">
 				  <div class="container">
 					<h3>Nguyễn Minh Ngọc</h3>
 					<p class="title">CEO</p>
@@ -151,7 +151,7 @@
 			  <div class="col-2"></div>
 			  <div class="col-4">
 				<div class="card">
-				  <img src="img/mem/KC.png" alt="cương" style="width:35%">
+				  <img src="../img/mem/KC.png" alt="cương" style="width:35%">
 				  <div class="container">
 					<h3>Bùi Huỳnh Kim Cương</h3>
 					<p class="title">Designer</p>
@@ -166,7 +166,7 @@
 
 			  <div class="col-4">
 				<div class="card">
-				  <img src="img/mem/DN.png" alt="nghi" style="width:35%">
+				  <img src="../img/mem/DN.png" alt="nghi" style="width:35%">
 				  <div class="container">
 					<h3>Trịnh Hoàng Đông Nghi</h3>
 					<p class="title">Janitor</p>
