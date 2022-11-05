@@ -2,6 +2,13 @@
 <html lang="en">
 
 <head>
+<?php
+require_once("../model/database.php");
+require_once("../model/nguoidung.php");
+$nd = new NGUOIDUNG();
+
+$nguoidung = $nd->laynguoidung();
+ ?>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,6 +65,9 @@
 
 	.card {
 	  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	  margin-bottom: 15px;
+	  align-items: center;
+	  
 	}
 	
 	.about-section {
@@ -70,12 +80,14 @@
 	.card .container {
 	  padding: 0 16px 16px;
 	  text-align: center;
+	  
 	}
 
 	.container::after, .row::after {
 	  content: "";
 	  clear: both;
 	  display: table;
+	  
 	}
 
 	img {
@@ -84,7 +96,10 @@
 	  margin-left: auto;
 	  margin-right: auto;
 	}
-	
+	.row{
+		justify-content: center;
+	  display: flex;
+	}
 	
 
 </style>
@@ -101,85 +116,27 @@
 			</div>
 			<br>
 			<div class="row">
-			  <div class="col-4">
+			<?php foreach ($nguoidung as $n){  ?>
+			
+			  <div class="col-4 ">
 				<div class="card">
-				  <img src="../img/mem/RB.png" alt="Băng" style="width:35%">
+				  <img src="../img/mem/<?php echo $n["hinhanh"]; ?>"  style="width:35%">
 				  <div class="container">
-					<h3>Nguyễn Ra Băng</h3>
+					<h3><?php echo $n["hoten"]; ?></h3>
 					<p class="title">CEO</p>
-					<p>DTH195127 - DH20TH1</p>
+					<p><?php echo $n["thongtin"]; ?></p>
 					<p>
-						<a href="mailto:nrbang_20th@student.agu.edu.vn"><i class="fa-solid fa-envelope"></i></a>
-						<a target="_blank" href="https://github.com/NBhunter"><i class="fa-brands fa-github"></i></a>
+						<a href="mailto:<?php echo $n["email"]; ?>"><i class="fa-solid fa-envelope"></i></a>
+						<a target="_blank" href="<?php echo $n["linkgithub"]; ?>"><i class="fa-brands fa-github"></i></a>
 					</p>
-				  </div>
+				  
 				</div>
 			  </div>
-
-			  <div class="col-4">
-				<div class="card">
-				  <img src="../img/mem/HK.png" alt="khang" style="width:35%">
-				  <div class="container">
-					<h3>Thái Hoàng Khang</h3>
-					<p class="title">Art Director</p>
-					<p>DTH195144 - DH20TH1</p>
-					<p>
-						<a href="mailto:thkhang_20th@student.agu.edu.vn"><i class="fa-solid fa-envelope"></i></a>
-						<a target="_blank" href="https://github.com/hoangkhang21"><i class="fa-brands fa-github"></i></a>
-					</p>
-				  </div>
-				</div>
 			  </div>
-			  
-			  <div class="col-4">
-				<div class="card">
-				  <img src="../img/mem/MN.png" alt="ngọc" style="width:35%">
-				  <div class="container">
-					<h3>Nguyễn Minh Ngọc</h3>
-					<p class="title">CEO</p>
-					<p>DTH195160 - DH20TH1</p>
-					<p>
-						<a href="mailto:nmngoc_20th@student.agu.edu.vn"><i class="fa-solid fa-envelope"></i></a>
-						<a target="_blank" href="https://github.com/NgocMinh66"><i class="fa-brands fa-github"></i></a>
-					</p>
-				  </div>
-				</div>
-			  </div>
+				<?php }?>
 			</div>
-			<br>
-			<div class="row">
-			  <div class="col-2"></div>
-			  <div class="col-4">
-				<div class="card">
-				  <img src="../img/mem/KC.png" alt="cương" style="width:35%">
-				  <div class="container">
-					<h3>Bùi Huỳnh Kim Cương</h3>
-					<p class="title">Designer</p>
-					<p>DTH195253 - DH20TH1</p>
-					<p>
-						<a href="mailto:bhkcuong_20th@student.agu.edu.vn"><i class="fa-solid fa-envelope"></i></a>
-						<a target="_blank" href="https://github.com/kcuong20th"><i class="fa-brands fa-github"></i></a>
-					</p>
-				  </div>
-				</div>
-			  </div>
-
-			  <div class="col-4">
-				<div class="card">
-				  <img src="../img/mem/DN.png" alt="nghi" style="width:35%">
-				  <div class="container">
-					<h3>Trịnh Hoàng Đông Nghi</h3>
-					<p class="title">Janitor</p>
-					<p>DTH195313 - DH20TH1</p>
-					<p>
-						<a href="mailto:thdnghi_20th@student.agu.edu.vn"><i class="fa-solid fa-envelope"></i></a>
-						<a target="_blank" href="https://github.com/thdngh"><i class="fa-brands fa-github"></i></a>
-					</p>
-				  </div>
-				</div>
-			  </div>
-			  <div class="col-2"></div>
-		  </div>
+			  
+			  
 	  <br>
 	  
 	</div>

@@ -355,4 +355,6 @@ li::marker{
 	text-transform: capitalize;
 	border-radius: 3px;
 }
-
+.card{
+  margin-bottom: 15px;
+}
