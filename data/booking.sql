@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 05, 2022 at 06:58 AM
+-- Generation Time: Nov 08, 2022 at 01:16 PM
 -- Server version: 5.7.25
 -- PHP Version: 7.1.26
 
@@ -36,6 +36,13 @@ CREATE TABLE `datphong` (
   `trangthai` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `datphong`
+--
+
+INSERT INTO `datphong` (`id`, `id_nguoidung`, `id_khachhang`, `id_phong`, `trangthai`) VALUES
+(1, 1, 1, 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -50,6 +57,13 @@ CREATE TABLE `donphong_ct` (
   `soluong` int(11) NOT NULL,
   `thanhtien` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `donphong_ct`
+--
+
+INSERT INTO `donphong_ct` (`id`, `id_khachhang`, `id_phong`, `dongia`, `soluong`, `thanhtien`) VALUES
+(1, 1, 1, 800000, 1, 800000);
 
 -- --------------------------------------------------------
 
@@ -66,6 +80,13 @@ CREATE TABLE `khachhang` (
   `tuoi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `khachhang`
+--
+
+INSERT INTO `khachhang` (`id`, `id_nguoidung`, `hoten`, `sodienthoai`, `cccd`, `tuoi`) VALUES
+(1, 1, 'Nguyễn Văn A', 945839248, '08980123456', 24);
+
 -- --------------------------------------------------------
 
 --
@@ -75,20 +96,27 @@ CREATE TABLE `khachhang` (
 CREATE TABLE `nguoidung` (
   `id` int(11) NOT NULL,
   `hoten` varchar(255) NOT NULL,
-  `sodienthoai` int(11) NOT NULL,
+  `chucvu` varchar(255) NOT NULL,
+  `mssv` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `matkhau` varchar(255) NOT NULL,
   `loainguoidung` varchar(255) NOT NULL,
   `trangthai` int(11) NOT NULL,
-  `hinhanh` varchar(255) NOT NULL
+  `hinhanh` varchar(255) NOT NULL,
+  `linkgithub` varchar(50) NOT NULL,
+  `thongtin` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `nguoidung`
 --
 
-INSERT INTO `nguoidung` (`id`, `hoten`, `sodienthoai`, `email`, `matkhau`, `loainguoidung`, `trangthai`, `hinhanh`) VALUES
-(1, 'abc', 12345, 'abc@gmail.com', 'abc', '1', 1, '');
+INSERT INTO `nguoidung` (`id`, `hoten`, `chucvu`, `mssv`, `email`, `matkhau`, `loainguoidung`, `trangthai`, `hinhanh`, `linkgithub`, `thongtin`) VALUES
+(1, 'Nguyễn Ra Băng', 'CEO', 'DTH195127 - DH20TH1', 'nrbang_20th@student.agu.edu.vn', 'abc', '1', 1, 'RB.png', 'https://github.com/NBhunter', ''),
+(2, 'Thái Hoàng Khang', 'Director', 'DTH195144 - DH20TH1', 'thkhang_20th@student.agu.edu.vn', 'abc', '1', 1, 'HK.png', 'https://github.com/hoangkhang21', ''),
+(3, 'Nguyễn Minh Ngọc', 'CEO', 'DTH195160 - DH20TH1', 'nmngoc_20th@student.agu.edu.vn', 'abc', '1', 1, 'MN.png', 'https://github.com/NgocMinh66', ''),
+(4, 'Bùi Huỳnh Kim Cương', 'Designer', 'DTH195253 - DH20TH1', 'bhkcuong_20th@student.agu.edu.vn', 'abc', '1', 1, 'KC.png', 'https://github.com/kcuong20th', ''),
+(5, 'Trịnh Hoàng Đông Nghi', 'Designer', 'DTH195313 - DH20TH1', 'thdnghi_20th@student.agu.edu.vn', 'abc', '1', 1, 'DN.png', 'https://github.com/thdngh', '');
 
 -- --------------------------------------------------------
 
@@ -102,6 +130,13 @@ CREATE TABLE `phong` (
   `loaiphong` int(11) NOT NULL,
   `gia` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `phong`
+--
+
+INSERT INTO `phong` (`id`, `id_nguoidung`, `loaiphong`, `gia`) VALUES
+(1, 1, 2, 800000);
 
 --
 -- Indexes for dumped tables
@@ -146,25 +181,25 @@ ALTER TABLE `phong`
 -- AUTO_INCREMENT for table `datphong`
 --
 ALTER TABLE `datphong`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `khachhang`
 --
 ALTER TABLE `khachhang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `nguoidung`
 --
 ALTER TABLE `nguoidung`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `phong`
 --
 ALTER TABLE `phong`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables

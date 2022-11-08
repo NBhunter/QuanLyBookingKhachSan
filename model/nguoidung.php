@@ -2,7 +2,8 @@
 class NGUOIDUNG{
     private $id ;
     private $hoten;
-    private $sodienthoai;
+    private $chucvu;
+    private $mssv;
     private $email;
     private $matkhau;
     private $loainguoidung;
@@ -51,12 +52,29 @@ class NGUOIDUNG{
         return $this;
     }
 
+    public function getChucvu()
+    {
+        return $this->chucvu;
+    }
+
+    /**
+     * Set the value of hoten
+     *
+     * @return  self
+     */ 
+    public function setChucvu($chucvu)
+    {
+        $this->chucvu = $chucvu;
+
+        return $this;
+    }
+  
     /**
      * Get the value of sodienthoai
      */ 
-    public function getSodienthoai()
+    public function getMssv()
     {
-        return $this->sodienthoai;
+        return $this->mssv;
     }
 
     /**
@@ -64,9 +82,9 @@ class NGUOIDUNG{
      *
      * @return  self
      */ 
-    public function setSodienthoai($sodienthoai)
+    public function setMssv($mssv)
     {
-        $this->sodienthoai = $sodienthoai;
+        $this->mssv =$mssv;
 
         return $this;
     }
