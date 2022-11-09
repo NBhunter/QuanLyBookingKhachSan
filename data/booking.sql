@@ -124,11 +124,11 @@ CREATE TABLE IF NOT EXISTS `nguoidung` (
 --
 
 INSERT INTO `nguoidung` (`id`, `hoten`, `chucvu`, `mssv`, `email`, `matkhau`, `loainguoidung`, `trangthai`, `hinhanh`, `linkgithub`, `thongtin`) VALUES
-(1, 'Nguyễn Ra Băng', 'CEO', 'DTH195127 - DH20TH1', 'nrbang_20th@student.agu.edu.vn', 'abc', '1', 1, 'RB.png', 'https://github.com/NBhunter', ''),
-(2, 'Thái Hoàng Khang', 'Director', 'DTH195144 - DH20TH1', 'thkhang_20th@student.agu.edu.vn', 'abc', '1', 1, 'HK.png', 'https://github.com/hoangkhang21', ''),
-(3, 'Nguyễn Minh Ngọc', 'CEO', 'DTH195160 - DH20TH1', 'nmngoc_20th@student.agu.edu.vn', 'abc', '1', 1, 'MN.png', 'https://github.com/NgocMinh66', ''),
-(4, 'Bùi Huỳnh Kim Cương', 'Designer', 'DTH195253 - DH20TH1', 'bhkcuong_20th@student.agu.edu.vn', 'abc', '1', 1, 'KC.png', 'https://github.com/kcuong20th', ''),
-(5, 'Trịnh Hoàng Đông Nghi', 'Designer', 'DTH195313 - DH20TH1', 'thdnghi_20th@student.agu.edu.vn', 'abc', '1', 1, 'DN.png', 'https://github.com/thdngh', ''),
+(1, 'Nguyễn Ra Băng', 'CEO', 'DTH195127 - DH20TH1', 'nrbang_20th@student.agu.edu.vn', '202cb962ac59075b964b07152d234b70', '1', 1, 'RB.png', 'https://github.com/NBhunter', ''),
+(2, 'Thái Hoàng Khang', 'Director', 'DTH195144 - DH20TH1', 'thkhang_20th@student.agu.edu.vn', '202cb962ac59075b964b07152d234b70', '1', 1, 'HK.png', 'https://github.com/hoangkhang21', ''),
+(3, 'Nguyễn Minh Ngọc', 'CEO', 'DTH195160 - DH20TH1', 'nmngoc_20th@student.agu.edu.vn', '202cb962ac59075b964b07152d234b70', '1', 1, 'MN.png', 'https://github.com/NgocMinh66', ''),
+(4, 'Bùi Huỳnh Kim Cương', 'Designer', 'DTH195253 - DH20TH1', 'bhkcuong_20th@student.agu.edu.vn', '202cb962ac59075b964b07152d234b70', '1', 1, 'KC.png', 'https://github.com/kcuong20th', ''),
+(5, 'Trịnh Hoàng Đông Nghi', 'Designer', 'DTH195313 - DH20TH1', 'thdnghi_20th@student.agu.edu.vn', '202cb962ac59075b964b07152d234b70', '1', 1, 'DN.png', 'https://github.com/thdngh', ''),
 (9093127, 'Hoàng Khang', '', '', 'hoangkhang123@gmail.com', '202cb962ac59075b964b07152d234b70', '2', 1, '', '', ''),
 (1109093147, 'Hoàng Khang', '', '', 'hoangkhang123@gmail.com', '202cb962ac59075b964b07152d234b70', '2', 1, '', '', ''),
 (1109093854, 'Nguyen Phuc', '', '', 'nguyenthimyanh1809@gmail.com', '202cb962ac59075b964b07152d234b70', '2', 1, '', '', ''),
