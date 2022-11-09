@@ -116,7 +116,7 @@ $nguoidung = $nd->laynguoidung();
 			</div>
 			<br>
 			<div class="row">
-			<?php foreach ($nguoidung as $n){  ?>
+			<?php foreach ($nguoidung as $n){ if($n["loainguoidung"] == '1') ?>
 			
 			  <div class="col-4 ">
 				<div class="card">

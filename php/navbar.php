@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,6 +23,10 @@
     $pageURL = $_SERVER["PHP_SELF"];
     $returnURL = "" ;
     switch($target){
+      case("signin"):
+        if($pageURL == "/QuanLyBookingKhachSan/php/about.php" || $pageURL == "/QuanLyBookingKhachSan/php/staffs.php" || $pageURL == "/QuanLyBookingKhachSan/php/signup.php" ||$pageURL == "/QuanLyBookingKhachSan/php/signin.php" )
+                  { $returnURL = "signin.php";}else{ $returnURL =  "php/signin.php"; }
+                  break;
     case("index"):
       if($pageURL == "/QuanLyBookingKhachSan/index.php" || $pageURL == "/QuanLyBookingKhachSan/res.php")
                   { $returnURL = "index.php";}else{ $returnURL =  "../index.php"; }
@@ -31,18 +36,14 @@
                   { $returnURL = "res.php";}else{ $returnURL =  "../res.php"; }
                   break;
     case("about"):
-      if($pageURL == "/QuanLyBookingKhachSan/php/about.php" || $pageURL == "/QuanLyBookingKhachSan/php/staffs.php" || $pageURL == "/QuanLyBookingKhachSan/php/signin.php" )
+      if($pageURL == "/QuanLyBookingKhachSan/php/about.php" || $pageURL == "/QuanLyBookingKhachSan/php/staffs.php" || $pageURL == "/QuanLyBookingKhachSan/php/signup.php" ||$pageURL == "/QuanLyBookingKhachSan/php/signin.php" )
                   { $returnURL = "about.php";}else{ $returnURL =  "php/about.php"; }
                   break;
     case("staffs"):
-      if($pageURL == "/QuanLyBookingKhachSan/php/about.php" || $pageURL == "/QuanLyBookingKhachSan/php/staffs.php" || $pageURL == "/QuanLyBookingKhachSan/php/signin.php" )
+      if($pageURL == "/QuanLyBookingKhachSan/php/about.php" || $pageURL == "/QuanLyBookingKhachSan/php/staffs.php" ||$pageURL == "/QuanLyBookingKhachSan/php/signup.php" || $pageURL == "/QuanLyBookingKhachSan/php/signin.php" )
                   { $returnURL = "staffs.php";}else{ $returnURL =  "php/staffs.php"; }
                   break;
-    case("signin"):
-      if($pageURL == "/QuanLyBookingKhachSan/php/about.php" || $pageURL == "/QuanLyBookingKhachSan/php/staff.php" || $pageURL == "/QuanLyBookingKhachSan/php/signin.php" )
-                  { $returnURL = "signin.php";}else{ $returnURL =  "php/signin.php"; }
-                  break;
-
+    
     }
     return $returnURL;
    }
