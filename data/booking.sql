@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 08, 2022 at 01:16 PM
--- Server version: 5.7.25
--- PHP Version: 7.1.26
+-- Máy chủ: 127.0.0.1:3306
+-- Thời gian đã tạo: Th10 09, 2022 lúc 02:42 AM
+-- Phiên bản máy phục vụ: 10.4.24-MariaDB
+-- Phiên bản PHP: 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,25 +18,28 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `booking`
+-- Cơ sở dữ liệu: `booking`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `datphong`
+-- Cấu trúc bảng cho bảng `datphong`
 --
 
-CREATE TABLE `datphong` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `datphong`;
+CREATE TABLE IF NOT EXISTS `datphong` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_nguoidung` int(11) NOT NULL,
   `id_khachhang` int(11) NOT NULL,
   `id_phong` int(11) NOT NULL,
-  `trangthai` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `trangthai` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_khachhang` (`id_khachhang`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `datphong`
+-- Đang đổ dữ liệu cho bảng `datphong`
 --
 
 INSERT INTO `datphong` (`id`, `id_nguoidung`, `id_khachhang`, `id_phong`, `trangthai`) VALUES
@@ -46,20 +48,22 @@ INSERT INTO `datphong` (`id`, `id_nguoidung`, `id_khachhang`, `id_phong`, `trang
 -- --------------------------------------------------------
 
 --
--- Table structure for table `donphong_ct`
+-- Cấu trúc bảng cho bảng `donphong_ct`
 --
 
-CREATE TABLE `donphong_ct` (
+DROP TABLE IF EXISTS `donphong_ct`;
+CREATE TABLE IF NOT EXISTS `donphong_ct` (
   `id` int(11) NOT NULL,
   `id_khachhang` int(11) NOT NULL,
   `id_phong` int(11) NOT NULL,
   `dongia` int(11) NOT NULL,
   `soluong` int(11) NOT NULL,
-  `thanhtien` int(11) NOT NULL
+  `thanhtien` int(11) NOT NULL,
+  KEY `idkhachhang` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `donphong_ct`
+-- Đang đổ dữ liệu cho bảng `donphong_ct`
 --
 
 INSERT INTO `donphong_ct` (`id`, `id_khachhang`, `id_phong`, `dongia`, `soluong`, `thanhtien`) VALUES
@@ -68,33 +72,40 @@ INSERT INTO `donphong_ct` (`id`, `id_khachhang`, `id_phong`, `dongia`, `soluong`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `khachhang`
+-- Cấu trúc bảng cho bảng `khachhang`
 --
 
-CREATE TABLE `khachhang` (
-  `id` int(11) NOT NULL,
-  `id_nguoidung` int(11) NOT NULL,
+DROP TABLE IF EXISTS `khachhang`;
+CREATE TABLE IF NOT EXISTS `khachhang` (
+  `id` int(13) NOT NULL AUTO_INCREMENT,
+  `id_nguoidung` int(13) NOT NULL,
   `hoten` varchar(255) NOT NULL,
   `sodienthoai` int(11) NOT NULL,
   `cccd` varchar(255) NOT NULL,
-  `tuoi` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `tuoi` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2147483648 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `khachhang`
+-- Đang đổ dữ liệu cho bảng `khachhang`
 --
 
 INSERT INTO `khachhang` (`id`, `id_nguoidung`, `hoten`, `sodienthoai`, `cccd`, `tuoi`) VALUES
-(1, 1, 'Nguyễn Văn A', 945839248, '08980123456', 24);
+(1, 1, 'Nguyễn Văn A', 945839248, '08980123456', 24),
+(9093127, 9093127, 'Hoàng Khang', 988848654, '1234567891012', 22),
+(1109093147, 1109093147, 'Hoàng Khang', 988848654, '1234567891012', 22),
+(1109093854, 1109093854, 'Nguyen Phuc', 1639998182, '1234561278910', 25),
+(1109094029, 1109094029, 'Nguyen Phuc', 1639998182, '1234561278910', 25);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nguoidung`
+-- Cấu trúc bảng cho bảng `nguoidung`
 --
 
-CREATE TABLE `nguoidung` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `nguoidung`;
+CREATE TABLE IF NOT EXISTS `nguoidung` (
+  `id` int(13) NOT NULL AUTO_INCREMENT,
   `hoten` varchar(255) NOT NULL,
   `chucvu` varchar(255) NOT NULL,
   `mssv` varchar(255) NOT NULL,
@@ -104,11 +115,12 @@ CREATE TABLE `nguoidung` (
   `trangthai` int(11) NOT NULL,
   `hinhanh` varchar(255) NOT NULL,
   `linkgithub` varchar(50) NOT NULL,
-  `thongtin` varchar(300) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `thongtin` varchar(300) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2147483648 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `nguoidung`
+-- Đang đổ dữ liệu cho bảng `nguoidung`
 --
 
 INSERT INTO `nguoidung` (`id`, `hoten`, `chucvu`, `mssv`, `email`, `matkhau`, `loainguoidung`, `trangthai`, `hinhanh`, `linkgithub`, `thongtin`) VALUES
@@ -116,117 +128,60 @@ INSERT INTO `nguoidung` (`id`, `hoten`, `chucvu`, `mssv`, `email`, `matkhau`, `l
 (2, 'Thái Hoàng Khang', 'Director', 'DTH195144 - DH20TH1', 'thkhang_20th@student.agu.edu.vn', 'abc', '1', 1, 'HK.png', 'https://github.com/hoangkhang21', ''),
 (3, 'Nguyễn Minh Ngọc', 'CEO', 'DTH195160 - DH20TH1', 'nmngoc_20th@student.agu.edu.vn', 'abc', '1', 1, 'MN.png', 'https://github.com/NgocMinh66', ''),
 (4, 'Bùi Huỳnh Kim Cương', 'Designer', 'DTH195253 - DH20TH1', 'bhkcuong_20th@student.agu.edu.vn', 'abc', '1', 1, 'KC.png', 'https://github.com/kcuong20th', ''),
-(5, 'Trịnh Hoàng Đông Nghi', 'Designer', 'DTH195313 - DH20TH1', 'thdnghi_20th@student.agu.edu.vn', 'abc', '1', 1, 'DN.png', 'https://github.com/thdngh', '');
+(5, 'Trịnh Hoàng Đông Nghi', 'Designer', 'DTH195313 - DH20TH1', 'thdnghi_20th@student.agu.edu.vn', 'abc', '1', 1, 'DN.png', 'https://github.com/thdngh', ''),
+(9093127, 'Hoàng Khang', '', '', 'hoangkhang123@gmail.com', '202cb962ac59075b964b07152d234b70', '2', 1, '', '', ''),
+(1109093147, 'Hoàng Khang', '', '', 'hoangkhang123@gmail.com', '202cb962ac59075b964b07152d234b70', '2', 1, '', '', ''),
+(1109093854, 'Nguyen Phuc', '', '', 'nguyenthimyanh1809@gmail.com', '202cb962ac59075b964b07152d234b70', '2', 1, '', '', ''),
+(1109094029, 'Nguyen Phuc', '', '', 'nguyenthimyanh1809@gmail.com', '202cb962ac59075b964b07152d234b70', '2', 1, '', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phong`
+-- Cấu trúc bảng cho bảng `phong`
 --
 
-CREATE TABLE `phong` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `phong`;
+CREATE TABLE IF NOT EXISTS `phong` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_nguoidung` int(11) NOT NULL,
   `loaiphong` int(11) NOT NULL,
-  `gia` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `gia` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `phong`
+-- Đang đổ dữ liệu cho bảng `phong`
 --
 
 INSERT INTO `phong` (`id`, `id_nguoidung`, `loaiphong`, `gia`) VALUES
 (1, 1, 2, 800000);
 
 --
--- Indexes for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Indexes for table `datphong`
---
-ALTER TABLE `datphong`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_khachhang` (`id_khachhang`);
-
---
--- Indexes for table `donphong_ct`
---
-ALTER TABLE `donphong_ct`
-  ADD KEY `idkhachhang` (`id`);
-
---
--- Indexes for table `khachhang`
---
-ALTER TABLE `khachhang`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `nguoidung`
---
-ALTER TABLE `nguoidung`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `phong`
---
-ALTER TABLE `phong`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `datphong`
---
-ALTER TABLE `datphong`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `khachhang`
---
-ALTER TABLE `khachhang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `nguoidung`
---
-ALTER TABLE `nguoidung`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `phong`
---
-ALTER TABLE `phong`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `datphong`
+-- Các ràng buộc cho bảng `datphong`
 --
 ALTER TABLE `datphong`
   ADD CONSTRAINT `id_khachhang` FOREIGN KEY (`id_khachhang`) REFERENCES `khachhang` (`id`),
   ADD CONSTRAINT `id_phong` FOREIGN KEY (`id`) REFERENCES `phong` (`id`);
 
 --
--- Constraints for table `donphong_ct`
+-- Các ràng buộc cho bảng `donphong_ct`
 --
 ALTER TABLE `donphong_ct`
   ADD CONSTRAINT `idkhachhang` FOREIGN KEY (`id`) REFERENCES `khachhang` (`id`),
   ADD CONSTRAINT `idphong` FOREIGN KEY (`id`) REFERENCES `phong` (`id`);
 
 --
--- Constraints for table `khachhang`
+-- Các ràng buộc cho bảng `khachhang`
 --
 ALTER TABLE `khachhang`
   ADD CONSTRAINT `id_nguoidung` FOREIGN KEY (`id`) REFERENCES `nguoidung` (`id`);
 
 --
--- Constraints for table `phong`
+-- Các ràng buộc cho bảng `phong`
 --
 ALTER TABLE `phong`
   ADD CONSTRAINT `idnguoidung` FOREIGN KEY (`id`) REFERENCES `nguoidung` (`id`);

@@ -2,6 +2,20 @@
 <html lang="en">
 
 <head>
+	<?php
+include("../model/database.php");
+include("../model/nguoidung.php");
+$nd = new NGUOIDUNG();
+
+date_default_timezone_set("Asia/Ho_Chi_Minh");
+$t=time();
+$id = date("mdhis",$t);
+$nd->themnguoidung($id);
+
+
+
+
+?>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +23,7 @@
 
 	<title>Signup</title>
 	
-	<link rel="icon" type="image/x-icon" href="img/mon.ico">
+	<link rel="icon" type="image/x-icon" href="../img/mon.ico">
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Cardo:700" rel="stylesheet">
@@ -18,12 +32,13 @@
 	<!-- Bootstrap -->
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../css/style.css">
 
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="../css/style.css" />
 
 	<script src="https://kit.fontawesome.com/97d6784897.js" crossorigin="anonymous"></script>
+	
 <style>
 button{align:center;}
 </style>
@@ -39,19 +54,19 @@ button{align:center;}
 						<div class="form-header">
 							<h1>SIGN UP</h1>
 						</div>
-						<form>
+						<form action="" method="post">
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
 									<span class="form-label">HỌ TÊN</span>
-									<input class="form-control" type="text" required="" placeholder="Nhập họ tên">
+									<input class="form-control" name = "name" type="text" required="" placeholder="Nhập họ tên">
 								</div>
 
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<span class="form-label">CMND/CCCD</span>
-									<input class="form-control" type="text" required="" placeholder="Nhập CMND/CCCD">
+									<input class="form-control" name = "cccd" type="text" required="" placeholder="Nhập CMND/CCCD">
 								</div>
 							</div>
 						</div>
@@ -65,7 +80,7 @@ button{align:center;}
 								<div class="col-md-4">
 									<div class="form-group">
 										<span class="form-label">SDT</span>
-										<input class="form-control" type="text" placeholder="Nhập SDT"required>
+										<input class="form-control" name = "sdt" type="text" placeholder="Nhập SDT"required>
 									</div>
 								</div>
 								<div class="col-md-5">
@@ -91,7 +106,8 @@ button{align:center;}
 								</div>
 							</div>
 							<div class="form-btn">
-								<button class="submit-btn">Sign up</button>
+							
+								<button class="submit-btn" href = "/signin.php">Sign up</button>
 							</div>
 						</form>
 					</div>
