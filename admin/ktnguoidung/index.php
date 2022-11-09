@@ -19,12 +19,12 @@ switch($action){
  include("main.php");
  break;
  case "dangnhap":
- include("signin.php");
+ include("../../signin.php");
  break;
  case "xldangnhap":
  $email = $_POST["txtemail"];
  $matkhau = $_POST["txtmatkhau"];
- if($nd->kiemtranguoidunghople($email,$matkhau)==TRUE){
+ if($nd->kiemtranguoidungbac1($email,$matkhau)==TRUE){
  $_SESSION["nguoidung"] = $nd->laythongtinnguoidunghople($email);
  include("main.php");
  }

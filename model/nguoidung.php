@@ -230,10 +230,10 @@ class NGUOIDUNG{
         }
     }
 
-    public function kiemtranguoidunghople($email, $matkhau){
+    public function kiemtranguoidungbac1($email, $matkhau){
         $dbcon= DATABASE::connect();
         try{
-            $sql= "SELECT * FROM nguoidung WHERE email=:email AND matkhau=:matkhau AND trangthai=1";
+            $sql= "SELECT * FROM nguoidung WHERE email=:email AND matkhau=:matkhau AND trangthai=1 AND phanquyen=1";
             $cmd=$dbcon->prepare($sql);
             $cmd->bindValue(":email", $email);
             $cmd->bindValue(":matkhau", md5($matkhau));

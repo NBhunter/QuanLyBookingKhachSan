@@ -1,7 +1,20 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
+	<?php 
+	include("../model/database.php");
+	include("../model/nguoidung.php");
+	$nd = new NGUOIDUNG();
+	if ($_SERVER["REQUEST_METHOD"] == "login") {
+		$nd = new NGUOIDUNG();
+		$email = $_POST["txtemail"];
+ 	$matkhau = $_POST["txtmatkhau"];
+	if($nd->kiemtranguoidungbac1($email,$matkhau)==TRUE){
+ $_SESSION["nguoidung"] = $nd->laythongtinnguoidunghople($email);
+ include("../admin/main.php");
+	}
+ }?>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,7 +50,7 @@
 						<div class="form-header">
 							<h1>SIGN IN</h1>
 						</div>
-						<form method="post" action="index.php">
+						<form method="login" action="">
 						<div class="row">
 							
 							<div class="col-md-6">
