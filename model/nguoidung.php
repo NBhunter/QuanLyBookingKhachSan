@@ -229,7 +229,7 @@ class NGUOIDUNG{
             exit();
         }
     }
-<<<<<<< HEAD
+
     public function kiemtranguoidunghople($email, $matkhau){
         $dbcon= DATABASE::connect();
         try{
@@ -267,7 +267,7 @@ class NGUOIDUNG{
             }
         }
 
-=======
+
     public function themnguoidung($id){
         
         $name="";
@@ -313,7 +313,7 @@ catch(PDOException $e){
 }
 $dbcon->close();
     }}
->>>>>>> a90bbfea5e078925b1b6bc868165ee8960ce1bd5
+
     /**
      * Get the value of thongtin
      */ 
