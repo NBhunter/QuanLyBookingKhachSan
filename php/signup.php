@@ -21,7 +21,7 @@
 	<link rel="stylesheet" href="css/style.css">
 
 	<!-- Custom stlylesheet -->
-	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<link type="text/css" rel="stylesheet" href="../css/style.css" />
 
 	<script src="https://kit.fontawesome.com/97d6784897.js" crossorigin="anonymous"></script>
 <style>
@@ -84,7 +84,7 @@ button{align:center;}
 									</div>
 								</div>
 								<div class="col-md-6">
-									<div class="form-group">
+								<div class="form-group">
 										<label for="reset" class="form-label"> Nhập Lại Mật khẩu</label>
 										<input type="password" class="form-control" id="reset" name="reset" required />
 									</div>

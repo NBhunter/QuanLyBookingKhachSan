@@ -74,7 +74,7 @@
             <div class="col-lg-5 text-center">
               <nav class="site-navigation text-left mr-auto " role="navigation">
 				<ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-					<li><a href="<?php echo curPageURL("signin");  ?>" class="nav-link">Sign in</a></li>
+					<li><a href="admin/ktnguoidung/signin.php" class="nav-link">Sign in</a></li>
 					<li><form>
 						<input type="text" name="search" placeholder="Search..">
 					</form></li>

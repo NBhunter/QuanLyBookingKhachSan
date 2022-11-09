@@ -224,6 +224,42 @@ class NGUOIDUNG{
             exit();
         }
     }
+    public function kiemtranguoidunghople($email, $matkhau){
+        $dbcon= DATABASE::connect();
+        try{
+            $sql= "SELECT * FROM nguoidung WHERE email=:email AND matkhau=:matkhau AND trangthai=1";
+            $cmd=$dbcon->prepare($sql);
+            $cmd->bindValue(":email", $email);
+            $cmd->bindValue(":matkhau", md5($matkhau));
+             $cmd->execute(); 
+             $result =($cmd->rowCount()==1);
+             $cmd->closeCursor();           
+            return $result;
+        }
+        catch(PDOException $e){
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn: $error_message</p>";
+            exit();
+        }
+    }
+        public function laythongtinnguoidunghople($email ){
+            $dbcon= DATABASE::connect();
+            try{
+                $sql= "SELECT * FROM nguoidung WHERE email=:email ";
+                $cmd=$dbcon->prepare($sql);
+                $cmd->bindValue(":email", $email);
+                
+                 $cmd->execute(); 
+                 $result =$cmd ->fetch();
+            
+                return $result;
+            }
+            catch(PDOException $e){
+                $error_message = $e->getMessage();
+                echo "<p>Lỗi truy vấn: $error_message</p>";
+                exit();
+            }
+        }
 
     /**
      * Get the value of thongtin
@@ -245,4 +281,5 @@ class NGUOIDUNG{
         return $this;
     }
 }
+
 ?>
