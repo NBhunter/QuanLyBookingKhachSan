@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<?php
+<head><?php
 include("../model/database.php");
 include("../model/nguoidung.php");
 $nd = new NGUOIDUNG();
@@ -13,8 +12,6 @@ $id = date("mdhis",$t);
 $nd->themnguoidung($id);
 
 
-
-
 ?>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +20,7 @@ $nd->themnguoidung($id);
 
 	<title>Signup</title>
 	
-	<link rel="icon" type="image/x-icon" href="../img/mon.ico">
+	<link rel="icon" type="image/x-icon" href="img/mon.ico">
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Cardo:700" rel="stylesheet">
@@ -32,7 +29,7 @@ $nd->themnguoidung($id);
 	<!-- Bootstrap -->
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="css/style.css">
 
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="../css/style.css" />
@@ -46,27 +43,27 @@ button{align:center;}
 <body>
 	<?php include 'navbar.php'; ?>
 
-	<div id="booking" class="section">
+	<div id="signup" class="section">
 		<div class="section-center">
 			<div class="container">
 				<div class="row">
-					<div class="booking-form">
+					<div class="signup-form" style="width:768px;">
 						<div class="form-header">
-							<h1>SIGN UP</h1>
+							<h1>Đăng ký</h1>
 						</div>
-						<form action="" method="post">
+						<form>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
 									<span class="form-label">HỌ TÊN</span>
-									<input class="form-control" name = "name" type="text" required="" placeholder="Nhập họ tên">
+									<input class="form-control" type="text" required="" placeholder="Nhập họ tên">
 								</div>
 
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<span class="form-label">CMND/CCCD</span>
-									<input class="form-control" name = "cccd" type="text" required="" placeholder="Nhập CMND/CCCD">
+									<input class="form-control" type="text" required="" placeholder="Nhập CMND/CCCD">
 								</div>
 							</div>
 						</div>
@@ -80,7 +77,7 @@ button{align:center;}
 								<div class="col-md-4">
 									<div class="form-group">
 										<span class="form-label">SDT</span>
-										<input class="form-control" name = "sdt" type="text" placeholder="Nhập SDT"required>
+										<input class="form-control" type="text" placeholder="Nhập SDT"required>
 									</div>
 								</div>
 								<div class="col-md-5">
@@ -99,15 +96,14 @@ button{align:center;}
 									</div>
 								</div>
 								<div class="col-md-6">
-								<div class="form-group">
+									<div class="form-group">
 										<label for="reset" class="form-label"> Nhập Lại Mật khẩu</label>
 										<input type="password" class="form-control" id="reset" name="reset" required />
 									</div>
 								</div>
 							</div>
 							<div class="form-btn">
-							
-								<button class="submit-btn" href = "/signin.php">Sign up</button>
+								<button class="submit-btn">Đăng ký</button>
 							</div>
 						</form>
 					</div>
