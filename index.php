@@ -75,10 +75,8 @@
 					<img src='img/about/beboi.jpg' width='100%'>
 				</div>				
 				<div class='col-md-3'></div>
-
 				
-				
-			</div>
+			</div
 			<div class='row'>
 				<div class='col-md-3'></div>
 				<div class='col-md-3'>
@@ -101,7 +99,6 @@
 	</div>
 
 		<?php include 'php/footer.php'; ?>
-
 </body>
 
 </html>
