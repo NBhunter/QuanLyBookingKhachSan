@@ -1,19 +1,21 @@
-<?php
+<?php 
 require("../../model/database.php");
 require("../../model/nguoidung.php");
-// Biến $isLogin cho biết người dùng đăng nhập chưa
+
+// Biến cho biết ng dùng đăng nhập chưa
 $isLogin = isset($_SESSION["nguoidung"]);
-// Kiểm tra hành động $action: yêu cầu đăng nhập nếu chưa xác thực
+
 if(isset($_REQUEST["action"])){
- $action = $_REQUEST["action"];
+    $action = $_REQUEST["action"];
 }
 elseif($isLogin == FALSE){
- $action = "dangnhap";
+    $action = "dangnhap";
 }
 else{
- $action="macdinh";
+    $action="macdinh"; 
 }
-$nd = new NGUOIDUNG();
+
+$nguoidung = new NGUOIDUNG();
 switch($action){
  case "macdinh": 
  include("main.php");
@@ -21,12 +23,15 @@ switch($action){
  case "dangxuat":
     header("location:../../php/signin.php");
  break;
+ case "dangnhap":
+    header("location:../../php/signin.php");
+ break;
  case "xldangnhap":
  $email = $_GET["txtemail"];
  $matkhau = $_GET["txtmatkhau"];
- var_dump($email);
-if($nd->kiemtranguoidungbac1($email,$matkhau)==TRUE){
- $_SESSION["nguoidung"] = $nd->laythongtinnguoidunghople($email);
+if($nguoidung->kiemtranguoidungbac1($email,$matkhau)==TRUE){
+ $_SESSION["nguoidung"] = $nguoidung->laythongtinnguoidunghople($email);
+ 
  include("main.php");
  }
  else{

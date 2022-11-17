@@ -14,12 +14,10 @@
 		$email = $_POST["txtemail"];
  		$matkhau = $_POST["txtmatkhau"];
 		 var_dump($nd->kiemtranguoidungbac2($email,$matkhau)==TRUE);
-	if($nd->kiemtranguoidungbac1($email,$matkhau)==TRUE){
-		
- $_SESSION["nguoidung"] = $nd->laythongtinnguoidunghople($email);
+	if($nd->kiemtranguoidungbac1($email,$matkhau)==TRUE){ 
  header("location:../admin/ktnguoidung/index.php?txtemail=".$email."&txtmatkhau=".$matkhau."&action=xldangnhap");
 	}elseif($nd->kiemtranguoidungbac2($email,$matkhau)==TRUE){
-		$_SESSION["nguoidung"] = $nd->laythongtinnguoidunghople($email);
+		
 		
 		   }
 		   else{

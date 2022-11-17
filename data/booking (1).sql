@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th10 09, 2022 lúc 02:42 AM
+-- Thời gian đã tạo: Th10 17, 2022 lúc 02:47 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 7.4.26
 
@@ -38,13 +38,6 @@ CREATE TABLE IF NOT EXISTS `datphong` (
   KEY `id_khachhang` (`id_khachhang`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
---
--- Đang đổ dữ liệu cho bảng `datphong`
---
-
-INSERT INTO `datphong` (`id`, `id_nguoidung`, `id_khachhang`, `id_phong`, `trangthai`) VALUES
-(1, 1, 1, 1, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -59,15 +52,9 @@ CREATE TABLE IF NOT EXISTS `donphong_ct` (
   `dongia` int(11) NOT NULL,
   `soluong` int(11) NOT NULL,
   `thanhtien` int(11) NOT NULL,
-  KEY `idkhachhang` (`id`)
+  PRIMARY KEY (`id`),
+  KEY `id_khachhang` (`id_khachhang`,`id_phong`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Đang đổ dữ liệu cho bảng `donphong_ct`
---
-
-INSERT INTO `donphong_ct` (`id`, `id_khachhang`, `id_phong`, `dongia`, `soluong`, `thanhtien`) VALUES
-(1, 1, 1, 800000, 1, 800000);
 
 -- --------------------------------------------------------
 
@@ -95,7 +82,7 @@ INSERT INTO `khachhang` (`id`, `id_nguoidung`, `hoten`, `sodienthoai`, `cccd`, `
 (9093127, 9093127, 'Hoàng Khang', 988848654, '1234567891012', 22),
 (1109093147, 1109093147, 'Hoàng Khang', 988848654, '1234567891012', 22),
 (1109093854, 1109093854, 'Nguyen Phuc', 1639998182, '1234561278910', 25),
-(1109094029, 1109094029, 'Nguyen Phuc', 1639998182, '1234561278910', 25);
+(1117092228, 1117092228, 'Nguyễn Băng', 999948653, '123456789123', 21);
 
 -- --------------------------------------------------------
 
@@ -125,14 +112,15 @@ CREATE TABLE IF NOT EXISTS `nguoidung` (
 
 INSERT INTO `nguoidung` (`id`, `hoten`, `chucvu`, `mssv`, `email`, `matkhau`, `loainguoidung`, `trangthai`, `hinhanh`, `linkgithub`, `thongtin`) VALUES
 (1, 'Nguyễn Ra Băng', 'CEO', 'DTH195127 - DH20TH1', 'nrbang_20th@student.agu.edu.vn', '202cb962ac59075b964b07152d234b70', '1', 1, 'RB.png', 'https://github.com/NBhunter', ''),
-(2, 'Thái Hoàng Khang', 'Director', 'DTH195144 - DH20TH1', 'thkhang_20th@student.agu.edu.vn', '202cb962ac59075b964b07152d234b70', '1', 1, 'HK.png', 'https://github.com/hoangkhang21', ''),
-(3, 'Nguyễn Minh Ngọc', 'CEO', 'DTH195160 - DH20TH1', 'nmngoc_20th@student.agu.edu.vn', '202cb962ac59075b964b07152d234b70', '1', 1, 'MN.png', 'https://github.com/NgocMinh66', ''),
-(4, 'Bùi Huỳnh Kim Cương', 'Designer', 'DTH195253 - DH20TH1', 'bhkcuong_20th@student.agu.edu.vn', '202cb962ac59075b964b07152d234b70', '1', 1, 'KC.png', 'https://github.com/kcuong20th', ''),
-(5, 'Trịnh Hoàng Đông Nghi', 'Designer', 'DTH195313 - DH20TH1', 'thdnghi_20th@student.agu.edu.vn', '202cb962ac59075b964b07152d234b70', '1', 1, 'DN.png', 'https://github.com/thdngh', ''),
+(2, 'Thái Hoàng Khang', 'Director', 'DTH195144 - DH20TH1', 'thkhang_20th@student.agu.edu.vn', 'abc', '1', 1, 'HK.png', 'https://github.com/hoangkhang21', ''),
+(3, 'Nguyễn Minh Ngọc', 'CEO', 'DTH195160 - DH20TH1', 'nmngoc_20th@student.agu.edu.vn', 'abc', '1', 1, 'MN.png', 'https://github.com/NgocMinh66', ''),
+(4, 'Bùi Huỳnh Kim Cương', 'Designer', 'DTH195253 - DH20TH1', 'bhkcuong_20th@student.agu.edu.vn', 'abc', '1', 1, 'KC.png', 'https://github.com/kcuong20th', ''),
+(5, 'Trịnh Hoàng Đông Nghi', 'Designer', 'DTH195313 - DH20TH1', 'thdnghi_20th@student.agu.edu.vn', 'abc', '1', 1, 'DN.png', 'https://github.com/thdngh', ''),
 (9093127, 'Hoàng Khang', '', '', 'hoangkhang123@gmail.com', '202cb962ac59075b964b07152d234b70', '2', 1, '', '', ''),
 (1109093147, 'Hoàng Khang', '', '', 'hoangkhang123@gmail.com', '202cb962ac59075b964b07152d234b70', '2', 1, '', '', ''),
 (1109093854, 'Nguyen Phuc', '', '', 'nguyenthimyanh1809@gmail.com', '202cb962ac59075b964b07152d234b70', '2', 1, '', '', ''),
-(1109094029, 'Nguyen Phuc', '', '', 'nguyenthimyanh1809@gmail.com', '202cb962ac59075b964b07152d234b70', '2', 1, '', '', '');
+(1109094029, 'Nguyen Phuc', '', '', 'nguyenthimyanh1809@gmail.com', '202cb962ac59075b964b07152d234b70', '2', 1, '', '', ''),
+(1117092228, 'Nguyen Băng', '', '', 'bangnguyen01072001@gmail.com', '202cb962ac59075b964b07152d234b70', '2', 1, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -142,19 +130,12 @@ INSERT INTO `nguoidung` (`id`, `hoten`, `chucvu`, `mssv`, `email`, `matkhau`, `l
 
 DROP TABLE IF EXISTS `phong`;
 CREATE TABLE IF NOT EXISTS `phong` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_nguoidung` int(11) NOT NULL,
+  `idPhong` int(11) NOT NULL AUTO_INCREMENT,
   `loaiphong` int(11) NOT NULL,
   `gia` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  `hinhanh` varchar(100) NOT NULL,
+  PRIMARY KEY (`idPhong`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
---
--- Đang đổ dữ liệu cho bảng `phong`
---
-
-INSERT INTO `phong` (`id`, `id_nguoidung`, `loaiphong`, `gia`) VALUES
-(1, 1, 2, 800000);
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -165,14 +146,14 @@ INSERT INTO `phong` (`id`, `id_nguoidung`, `loaiphong`, `gia`) VALUES
 --
 ALTER TABLE `datphong`
   ADD CONSTRAINT `id_khachhang` FOREIGN KEY (`id_khachhang`) REFERENCES `khachhang` (`id`),
-  ADD CONSTRAINT `id_phong` FOREIGN KEY (`id`) REFERENCES `phong` (`id`);
+  ADD CONSTRAINT `id_phong` FOREIGN KEY (`id`) REFERENCES `phong` (`idPhong`);
 
 --
 -- Các ràng buộc cho bảng `donphong_ct`
 --
 ALTER TABLE `donphong_ct`
   ADD CONSTRAINT `idkhachhang` FOREIGN KEY (`id`) REFERENCES `khachhang` (`id`),
-  ADD CONSTRAINT `idphong` FOREIGN KEY (`id`) REFERENCES `phong` (`id`);
+  ADD CONSTRAINT `idphong` FOREIGN KEY (`id`) REFERENCES `phong` (`idPhong`);
 
 --
 -- Các ràng buộc cho bảng `khachhang`
@@ -184,7 +165,7 @@ ALTER TABLE `khachhang`
 -- Các ràng buộc cho bảng `phong`
 --
 ALTER TABLE `phong`
-  ADD CONSTRAINT `idnguoidung` FOREIGN KEY (`id`) REFERENCES `nguoidung` (`id`);
+  ADD CONSTRAINT `idnguoidung` FOREIGN KEY (`idPhong`) REFERENCES `nguoidung` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
