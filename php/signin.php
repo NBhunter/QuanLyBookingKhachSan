@@ -7,14 +7,15 @@
 	include("../model/database.php");
 	include("../model/nguoidung.php");
 	$href ="";
-	$nd = new NGUOIDUNG();
+	
 	var_dump($_SERVER["REQUEST_METHOD"]);
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$nd = new NGUOIDUNG();
 		$email = $_POST["txtemail"];
- 	$matkhau = $_POST["txtmatkhau"];
+ 		$matkhau = $_POST["txtmatkhau"];
+		 var_dump($nd->kiemtranguoidungbac2($email,$matkhau)==TRUE);
 	if($nd->kiemtranguoidungbac1($email,$matkhau)==TRUE){
-		var_dump($email);
+		
  $_SESSION["nguoidung"] = $nd->laythongtinnguoidunghople($email);
  header("location:../admin/ktnguoidung/index.php?txtemail=".$email."&txtmatkhau=".$matkhau."&action=xldangnhap");
 	}elseif($nd->kiemtranguoidungbac2($email,$matkhau)==TRUE){
@@ -61,21 +62,21 @@
 						<div class="form-header">
 							<h1>SIGN IN</h1>
 						</div>
-						<form>
+						<form method="post" action="" >
 							<div class="form-group">
 								<span class="form-label">Email</span>
-								<input class="form-control" type="text" required="" placeholder="Nhập email" >
+								<input  name="txtemail" class="form-control" type="text" required="" placeholder="Nhập email" >
 							</div>
 						
 							<div class="form-group">
 								<span class="form-label">Mật khẩu</span>
-								<input class="form-control" type="password" required="" placeholder="Nhập mật khẩu">
+								<input name="txtmatkhau" class="form-control" type="password" required="" placeholder="Nhập mật khẩu">
 							</div>
 							
 							<div class="form-group">
 							<a href="signup.php">need an account?</a></div>
 							<div class="form-btn" align="center">
-								<button class="submit-btn">Sign in</button>
+								<button class="submit-btn" type="submit">Sign in</button>
 							</div>
 						</form>
 					</div>

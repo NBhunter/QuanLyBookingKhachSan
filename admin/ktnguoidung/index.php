@@ -18,8 +18,8 @@ switch($action){
  case "macdinh": 
  include("main.php");
  break;
- case "dangnhap":
-
+ case "dangxuat":
+    header("location:../../php/signin.php");
  break;
  case "xldangnhap":
  $email = $_GET["txtemail"];

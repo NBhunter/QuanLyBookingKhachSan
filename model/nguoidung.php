@@ -312,7 +312,7 @@ class NGUOIDUNG{
             VALUES ('$id','$id','$name','$sdt','$cccd','$tuoi')";
             var_dump($sql);
             var_dump($sql2);
-
+            header("location:signin.php");
 $dbcon = DATABASE::connect();
 try{
     
