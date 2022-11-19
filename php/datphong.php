@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php 
+ require_once("../model/database.php");
+require_once("../model/Phong.php");
+$DSP = new  PHONG();
+$Phong = $DSP->layphonghoatdong();
+?>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -215,17 +220,20 @@
     <div class="col-sm-8">
       <h1>Kết quả đồ đó</h1>
 	  <div class="card">
-	  <div class="row">
-			<div class="col-4">
+	  <?php
+	foreach($Phong as $p):
+	?>
+	<div class="row">
+	<div class="col-4">
 				<div class="room-img" style='margin:10px;'>
-					<img src="../img/about/phongdon.jpg" width='100%'>
+					<img src="../img/Room/<?php echo $p["hinhanh"]; ?>" width='100%'>
 				</div>
 			</div>
 			<div class="col-8">
 				<div class="room-desc" style='margin:10px;'>
-					<h3><a href="" style="text-decoration:none; color:#2c5c2b;" >Phòng đẹp vl</a></h3>
-					<p>Giá cả đồ:</p>
-					<p>Mô tả:</p>
+					<h3><a href="" style="text-decoration:none; color:#2c5c2b;" ><?php echo $p["TenPhong"]; ?></a></h3>
+					<p>Giá cả đồ:<?php echo $p["gia"]; ?> Đ</p>
+					<p>Mô tả:<?php echo $p["motangan"]; ?></p>
 					<p class="mb-0" align="right">
 						<a class="btn btn-readmore" href="#" target="_blank" >Xem Thêm</a>
 						<a class="btn btn-book" href="#" target="_blank" >Đặt phòng</a>
@@ -235,6 +243,10 @@
 		</div>
 		</div>
 		<br>
+	<?php
+	endforeach;
+	?>
+	  
 																																																																																																																																																																																																																																																																																																																																																																																								</div>
     </div>
 </div>

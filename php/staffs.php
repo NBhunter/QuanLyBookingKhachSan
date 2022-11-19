@@ -124,7 +124,7 @@ $nguoidung = $nd->laynguoidung();
 				  <div class="container">
 					<h3><?php echo $n["hoten"]; ?></h3>
 					<p><?php echo $n["chucvu"]; ?></p>
-					<p><?php echo $n["mssv"]; ?></p>
+					
 					<p><?php echo $n["thongtin"]; ?></p>
 					<p>
 						<a href="mailto:<?php echo $n["email"]; ?>"><i class="fa-solid fa-envelope"></i></a>

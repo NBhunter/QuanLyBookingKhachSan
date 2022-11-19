@@ -24,7 +24,7 @@
     $returnURL = "" ;
     switch($target){
       case("signin"):
-        if($pageURL == "/QuanLyBookingKhachSan/php/about.php" || $pageURL == "/QuanLyBookingKhachSan/php/staffs.php" || $pageURL == "/QuanLyBookingKhachSan/php/signup.php" ||$pageURL == "/QuanLyBookingKhachSan/php/signin.php" )
+        if($pageURL == "/QuanLyBookingKhachSan/php/about.php" || $pageURL == "/QuanLyBookingKhachSan/php/staffs.php" || $pageURL == "/QuanLyBookingKhachSan/php/signup.php" ||$pageURL == "/QuanLyBookingKhachSan/php/signin.php"||$pageURL == "/QuanLyBookingKhachSan/php/datphong.php" )
                   { $returnURL = "signin.php";}else{ $returnURL =  "php/signin.php"; }
                   break;
     case("index"):
@@ -36,13 +36,18 @@
                   { $returnURL = "res.php";}else{ $returnURL =  "../res.php"; }
                   break;
     case("about"):
-      if($pageURL == "/QuanLyBookingKhachSan/php/about.php" || $pageURL == "/QuanLyBookingKhachSan/php/staffs.php" || $pageURL == "/QuanLyBookingKhachSan/php/signup.php" ||$pageURL == "/QuanLyBookingKhachSan/php/signin.php" )
+      if($pageURL == "/QuanLyBookingKhachSan/php/about.php" || $pageURL == "/QuanLyBookingKhachSan/php/staffs.php" || $pageURL == "/QuanLyBookingKhachSan/php/signup.php" ||$pageURL == "/QuanLyBookingKhachSan/php/signin.php"||$pageURL == "/QuanLyBookingKhachSan/php/datphong.php" )
                   { $returnURL = "about.php";}else{ $returnURL =  "php/about.php"; }
                   break;
     case("staffs"):
-      if($pageURL == "/QuanLyBookingKhachSan/php/about.php" || $pageURL == "/QuanLyBookingKhachSan/php/staffs.php" ||$pageURL == "/QuanLyBookingKhachSan/php/signup.php" || $pageURL == "/QuanLyBookingKhachSan/php/signin.php" )
+      if($pageURL == "/QuanLyBookingKhachSan/php/about.php" || $pageURL == "/QuanLyBookingKhachSan/php/staffs.php" ||$pageURL == "/QuanLyBookingKhachSan/php/signup.php" || $pageURL == "/QuanLyBookingKhachSan/php/signin.php"||$pageURL == "/QuanLyBookingKhachSan/php/datphong.php" )
                   { $returnURL = "staffs.php";}else{ $returnURL =  "php/staffs.php"; }
                   break;
+     case("room"):
+      if($pageURL == "/QuanLyBookingKhachSan/php/about.php" || $pageURL == "/QuanLyBookingKhachSan/php/staffs.php" ||$pageURL == "/QuanLyBookingKhachSan/php/signup.php" || $pageURL == "/QuanLyBookingKhachSan/php/signin.php"||$pageURL == "/QuanLyBookingKhachSan/php/datphong.php" )
+                  { $returnURL = "datphong.php";}else{ $returnURL =  "php/datphong.php"; }
+                  break;
+    
     
     }
     return $returnURL;
@@ -76,6 +81,7 @@
               <nav class="site-navigation text-left mr-auto " role="navigation">
 				<ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
 					<li><a href="<?php echo curPageURL("signin");  ?>" class="nav-link">Sign in</a></li>
+          <li><a href="<?php echo curPageURL("room");  ?>" class="nav-link">Tìm Phòng</a></li>
 					<li><form>
 						<input type="text" name="search" placeholder="Search..">
 					</form></li>

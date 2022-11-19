@@ -1,10 +1,5 @@
 <?php 
- print_r($_SESSION["nguoidung"]);
-if(!isset($_SESSION["nguoidung"])){
-    
-   header("location:../index.php");
-    
-}
+
 require("../../model/database.php");
 require("../../model/Phong.php");
 // Xét xem có thao tác nào được chọn

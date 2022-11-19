@@ -3,9 +3,10 @@ class PHONG{
     private $idphong;
     private $loaiphong;
     private $gia;
+    private $mota;
     private $hinhanh;
     private $trangthai;
-
+    private $motangan;
 
     /**
      * Get the value of idphong
@@ -108,7 +109,6 @@ class PHONG{
             exit();
         }
     }
-    public function ThemPhong
 
     /**
      * Get the value of trangthai
@@ -124,6 +124,42 @@ class PHONG{
     public function setTrangthai($trangthai): self
     {
         $this->trangthai = $trangthai;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of mota
+     */
+    public function getMota()
+    {
+        return $this->mota;
+    }
+
+    /**
+     * Set the value of mota
+     */
+    public function setMota($mota): self
+    {
+        $this->mota = $mota;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of motangan
+     */
+    public function getMotangan()
+    {
+        return $this->motangan;
+    }
+
+    /**
+     * Set the value of motangan
+     */
+    public function setMotangan($motangan): self
+    {
+        $this->motangan = $motangan;
 
         return $this;
     }

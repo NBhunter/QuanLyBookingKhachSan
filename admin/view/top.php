@@ -81,7 +81,7 @@
         <div class="dropdown" style="text-align: right;">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
             <span class="glyphicon glyphicon-user"></span> Chào bà 
-			<?php echo $_SESSION["nguoidung"]["hoten"];?> nha
+			<?php  if(isset($_SESSION["nguoidung"]))echo $_SESSION["nguoidung"]["hoten"];?> nha
             <span class="caret"></span>
           </a>
             
