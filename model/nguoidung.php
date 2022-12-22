@@ -266,6 +266,23 @@ class NGUOIDUNG{
             exit();
         }
     }
+    public function kiemtranguoidungdadk($email){
+        $dbcon= DATABASE::connect();
+        try{
+            $sql= "SELECT * FROM nguoidung WHERE email=:email AND trangthai=1 AND loainguoidung= '2'";
+            $cmd=$dbcon->prepare($sql);
+            $cmd->bindValue(":email", $email);
+             $cmd->execute(); 
+             $result =($cmd->rowCount()==1);
+             $cmd->closeCursor();           
+            return $result;
+        }
+        catch(PDOException $e){
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn: $error_message</p>";
+            exit();
+        }
+    }
         public function laythongtinnguoidunghople($email ){
             $dbcon= DATABASE::connect();
             try{
@@ -297,22 +314,21 @@ class NGUOIDUNG{
         $password="";
         $reset="";
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if(isset($_POST["name"])) { $name = $_POST['name']; }
+            if(isset($_POST["txtname"])) { $name = $_POST["txtname"]; }
             if(isset($_POST["ngaysinh"])) { $ngaysinh = $_POST['ngaysinh']; $diff = date_diff(date_create(), date_create($ngaysinh));  $tuoi =  $diff->format('%Y');            }
-            if(isset($_POST["cccd"])) { $cccd = $_POST['cccd']; }
+            if(isset($_POST["txtcccd"])) { $cccd = $_POST["txtcccd"]; }
             if(isset($_POST["sdt"])) { $sdt = $_POST['sdt']; }
-            if(isset($_POST["email"])) { $email = $_POST['email']; }
+            if(isset($_POST["txtemail"])) { $email = $_POST["txtemail"]; }
             if(isset($_POST["password"])) { $password = $_POST['password']; }
             if(isset($_POST["reset"])) { $reset = $_POST['reset']; }
             if($password == $reset){ $password = md5($password);
             }
+            // var_dump($id);
             $sql = "INSERT INTO `nguoidung`(`id`, `hoten`, `email`, `matkhau`, `loainguoidung`, `trangthai` ) 
             VALUES ('$id','$name','$email','$password',2,1)";
-            $sql2 = "INSERT INTO `khachhang`(`id`, `id_nguoidung`, `hoten`, `sodienthoai`, `cccd`, tuoi) 
+            $sql2 = "INSERT INTO `khachhang`(`id`, `idnguoidung`, `hoten`, `sodienthoai`, `cccd`, tuoi) 
             VALUES ('$id','$id','$name','$sdt','$cccd','$tuoi')";
-            var_dump($sql);
-            var_dump($sql2);
-            header("location:signin.php");
+       
 $dbcon = DATABASE::connect();
 try{
     

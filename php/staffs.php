@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-<?php
-require_once("../model/database.php");
-require_once("../model/nguoidung.php");
-$nd = new NGUOIDUNG();
-
-$nguoidung = $nd->laynguoidung();
- ?>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Booking</title>
+    <link rel="shortcut icon" href="img/kienan.ico">
+	<title>Khách Sạn giường nằm - KA Hố tèo</title>
 	
 	<link rel="icon" type="image/x-icon" href="../img/mon.ico">
 
@@ -120,7 +111,7 @@ $nguoidung = $nd->laynguoidung();
 			
 			  <div class="col-4 ">
 				<div class="card">
-				  <img src="../img/mem/<?php echo $n["hinhanh"]; ?>"  style="width:35%">
+				  <img src="img/mem/<?php echo $n["hinhanh"]; ?>"  style="width:35%">
 				  <div class="container">
 					<h3><?php echo $n["hoten"]; ?></h3>
 					<p><?php echo $n["chucvu"]; ?></p>

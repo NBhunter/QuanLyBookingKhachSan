@@ -1,37 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-<?php 
-
-	include("../model/database.php");
-	include("../model/nguoidung.php");
-	$href ="";
-	
-	var_dump($_SERVER["REQUEST_METHOD"]);
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		$nd = new NGUOIDUNG();
-		$email = $_POST["txtemail"];
- 		$matkhau = $_POST["txtmatkhau"];
-		 var_dump($nd->kiemtranguoidungbac2($email,$matkhau)==TRUE);
-	if($nd->kiemtranguoidungbac1($email,$matkhau)==TRUE){ 
-		session_start();
- header("location:../admin/ktnguoidung/index.php?txtemail=".$email."&txtmatkhau=".$matkhau."&action=xldangnhap");
-	}elseif($nd->kiemtranguoidungbac2($email,$matkhau)==TRUE){
-		
-		
-		   }
-		   else{
-
-		   }
- }
-?>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Signup</title>
+	<link rel="shortcut icon" href="img/kienan.ico">
+	<title>Khách Sạn giường nằm - KA Hố tèo</title>
 	
 	<link rel="icon" type="image/x-icon" href="img/mon.ico">
 
@@ -61,7 +35,7 @@
 						<div class="form-header">
 							<h1>SIGN IN</h1>
 						</div>
-						<form method="post" action="" >
+						<form method="post" action="?action=xlsignin" >
 							<div class="form-group">
 								<span class="form-label">Email</span>
 								<input  name="txtemail" class="form-control" type="text" required="" placeholder="Nhập email" >
@@ -73,7 +47,7 @@
 							</div>
 							
 							<div class="form-group">
-							<a href="signup.php">need an account?</a></div>
+							<a href="?action=signup">need an account?</a></div>
 							<div class="form-btn" align="center">
 								<button class="submit-btn" type="submit">Sign in</button>
 							</div>
@@ -84,8 +58,3 @@
 		</div>
 	</div>
 	
-	<?php include 'footer.php'; ?>
-	
-</body>
-
-</html>

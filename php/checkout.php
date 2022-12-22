@@ -144,37 +144,26 @@
   <div class="row">
     <div class="col-sm-4">
 		<div class="s-form">
-			<div class="form-header"><h1>Tìm phòng</h1></div>
-			<form>				
+			<div class="form-header"><h1>Thanh to</h1></div>
+			<form method="post" action = "?action=checkout">				
 				<div class='row'>
+				<input class="form-control" name="id" type="hidden" value="<?php echo $phong["id"]?>">
 					<div class="col-sm-6">
 						<div class="form-group">
 							<span class="form-label">Check In</span>
-							<input class="form-control" type="date" required>
+							<input class="form-control" name="checkin" type="date" required>
 						</div>
 					</div>
 					
 					<div class="col-sm-6">
 						<div class="form-group">
 							<span class="form-label">Check out</span>
-							<input class="form-control" type="date" required>
+							<input class="form-control" name ="checkout"type="date" required>
 						</div>
 					</div>
 				</div>
 				
-				<div class='row'>
-					<div class="col">
-						<div class="form-group">
-							<span class="form-label">No of rooms</span>
-							<select class="form-control">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-							</select>
-							<span class="select-arrow"></span>
-						</div>
-					</div>
-				</div>
+				
 				
 				<div class='row'>
 					<div class="col">
@@ -203,45 +192,37 @@
 				<div class='row'>
 					<div class="col">
 						<div class="form-btn">
-							<button class="submit-btn">Check availability</button>
+							<button class="submit-btn" type="submit">Thanh toán</button>
 						</div>
 					</div>
 				</div>
 			</form>
 	</div>
-
-      <ul class="nav nav-pills nav-stacked"></ul>
+	
+	<ul class="nav nav-pills nav-stacked"></ul>
       <!--<hr class="hidden-sm hidden-md hidden-lg">-->
     </div>
     <div class="col-sm-8">
-      <h1>Kết quả đồ đó</h1>
+      <h1>Thông tin phòng</h1>
 	  <div class="card">
-	  <?php
-	foreach($Phong as $p):
-	?>
+	  
 	<div class="row">
 	<div class="col-4">
-				<div class="room-img" style='margin:10px;'>
-					<img src="img/Room/<?php echo $p["hinhanh"]; ?>" width='100%'>
+	<div class="room-img" style='margin:10px;'>
+					<img src="img/Room/<?php echo $phong["hinhanh"]; ?>" width='100%'>
 				</div>
 			</div>
 			<div class="col-8">
 				<div class="room-desc" style='margin:10px;'>
-					<h3><a href="" style="text-decoration:none; color:#2c5c2b;" ><?php echo $p["TenPhong"]; ?></a></h3>
-					<p>Giá cả đồ:<?php echo $p["gia"]; ?> Đ</p>
-					<p>Mô tả:<?php echo $p["motangan"]; ?></p>
-					<p class="mb-0" align="right">
-						<a class="btn btn-readmore" href="#" target="_blank" >Xem Thêm</a>
-						<a class="btn btn-book" href="?action=datphong&id=<?php echo $p['id']?>"  >Đặt phòng</a>
-					</p>
+					<h3><a href="" style="text-decoration:none; color:#2c5c2b;" ><?php echo $phong["TenPhong"]; ?></a></h3>
+					<p>Giá cả đồ:<?php echo $phong["gia"]; ?> Đ</p>
+					<p>Mô tả:<?php echo $phong["mota"]; ?></p>
 				</div>
 			</div>
 		</div>
 		</div>
 		<br>
-	<?php
-	endforeach;
-	?>
+
 	  
 																																																																																																																																																																																																																																																																																																																																																																																								</div>
     </div>

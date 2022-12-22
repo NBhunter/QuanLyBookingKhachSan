@@ -1,104 +1,207 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+session_start();
+require("model/database.php");
+require("model/LoaiPhong.php");
+require("model/Phong.php");
+require("model/nguoidung.php");
 
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
-	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-	<title>Home</title>
-	
-	<link rel="icon" type="image/x-icon" href="img/mon.ico">
-
-	<!-- Google font -->
-	<link href="https://fonts.googleapis.com/css?family=Cardo:700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
-
-	<!-- Bootstrap -->
-	<!-- Bootstrap CSS -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/style.css">
-
-	<!-- Custom stlylesheet -->
-	<link type="text/css" rel="stylesheet" href="css/style.css" />
-	
-	<script src="https://kit.fontawesome.com/97d6784897.js" crossorigin="anonymous"></script>
-
-<style>
-.main{
-	background-color:#ccc;
-	padding:10px;
+$lp = new LOAIPHONG();
+$p = new PHONG();
+$nd = new NGUOIDUNG();
+$loaiphong = $lp->layloaiphong();
+$soluong=1;
+if(isset($_REQUEST["action"])){
+    $action = $_REQUEST["action"];
 }
-</style>
-
-</head>
-
-<body>
-		<?php include 'php/navbar.php'; ?>
-	<header>
-		<img src='img/banner.jpg' width='100%'>
-	</header>
-	<br>
-	
-	<div class='main'>
-		<div class='container'>
-			<div class='row'>
-				<div class='col-md-3'></div>
-				<div class='col-md-3'>
-					<img src='img/about/beboi.jpg' width='100%'>
-				</div>
-				
-				<div class='col-md-6 '>
-					<div class="text">
-						<h3 class="ka-subtitle">Nhà </h3>
-						<p>Nhà hàng ấm cúng với khu vực máy lạnh hoặc ngoài sân vườn, với các món ăn chon lọc thuần túy Việt Nam và các món ăn quốc tế Việt Nam. Nhà hàng phục vụ café, ăn sáng nhẹ, ăn trưa và tối hoặc phục vụ tại phòng.</p>
-						<p class="mb-0">
-							<a class="btn btn-readmore" href="about.php" target="_self">Xem Thêm</a>
-						</p>
-					</div>
-				</div>
-			</div>
+else{
+    $action="macdinh"; 
+}
+// $mathangnoibat = $mh->laymathangnoibat();
+$tmp= "";
+switch($action){
+    case "macdinh": 
+        
+       
+        include("main.php");
+        break;
+    case "signin": 
+		
+        include("php/signin.php");
+        break;
+	case "xlsignin": 
+		$email = $_POST["txtemail"];
+        $matkhau = $_POST["txtmatkhau"];
+        if($nd->kiemtranguoidungbac2($email,$matkhau)==TRUE){
+             $_SESSION["khachhang"] = $nd->laythongtinnguoidunghople($email);
+            // đọc thông tin (đơn hàng) của kh
+			if($tmp == ""){
+				include("main.php");
+			}
 			
-			<div class='row'>
-				<div class='col-md-6'>
-					<div class="text">
-						<h3 class="ka-subtitle">Đặt phòng</h3>
-						<p>Nhà hàng ấm cúng với khu vực máy lạnh hoặc ngoài sân vườn, với các món ăn chon lọc thuần túy Việt Nam và các món ăn quốc tế Việt Nam. Nhà hàng phục vụ café, ăn sáng nhẹ, ăn trưa và tối hoặc phục vụ tại phòng.</p>
-						<p class="mb-0">
-							<a class="btn btn-readmore" href="res.php" target="_self">Xem Thêm</a>
-						</p>
-					</div>
-				</div>
-				<div class='col-md-3'>
-					<img src='img/about/beboi.jpg' width='100%'>
-				</div>				
-				<div class='col-md-3'></div>
-				
-			</div
-			<div class='row'>
-				<div class='col-md-3'></div>
-				<div class='col-md-3'>
-					<img src='img/about/beboi.jpg' width='100%'>
-				</div>
-				
-				<div class='col-md-6'>
-					<div class="text">
-						<h3 class="ka-subtitle">Nhà hàng ẩm thực</h3>
-						<p>Nhà hàng ấm cúng với khu vực máy lạnh hoặc ngoài sân vườn, với các món ăn chon lọc thuần túy Việt Nam và các món ăn quốc tế Việt Nam. Nhà hàng phục vụ café, ăn sáng nhẹ, ăn trưa và tối hoặc phục vụ tại phòng.</p>
-						<p class="mb-0">
-							<a class="btn btn-readmore" href="about.php" target="_self">Xem Thêm</a>
-						</p>
-					</div>
-				</div>
-				
-			</div>
 			
-		</div>
-	</div>
+        }
+        else{
+            echo '<script>alert("đăng nhập không thành công")</script>';
+			
+             include("php/signin.php");
+        }
+        
+        break;
+	case "signup": 
+		
+        include("php/signup.php");
+        break;
+	case "xlsignup": 
+		
+		$email = $_POST["txtemail"];
+		$hoten = $_POST["txtname"];
+        $matkhau = $_POST["password"];
+		$reset = $_POST["reset"];
+        $sdt = $_POST["sdt"];
+		$ngaysinh = $_POST["ngaysinh"];
+        $cccd = $_POST["txtcccd"];
+        if($nd->kiemtranguoidungdadk($email)==FALSE){
+            // $_SESSION["khachhang"] = $nd->laythongtinnguoidunghople($email);
+            // đọc thông tin (đơn hàng) của kh
 
-		<?php include 'php/footer.php'; ?>
-</body>
+			$t=time();
+			$id = date("mdhis",$t);
+			$nd->themnguoidung($id);
+			echo '<script>alert("đã đăng ký thành công, vui lòng đăng nhập")</script>';
+			include("php/signin.php");
+        }
+        else{
+			echo '<script>alert("tài khoảng đã được đăng ký, vui lòng đăng nhập")</script>';
+			
+             include("php/signin.php");
+        }
+        
+        break;
+    case "staffs": 
+		$nguoidung = $nd->laynguoidung();
+        include("php/staffs.php");
+        break;
+    case "Reservation":
+		$Phong = $p->layphonghoatdong();
+       include("php/datphong.php");
+        break;
+    case "hotel":
+        
+        
+        include("php/about.php");
+        break;
+    case "searchroom":
+        $search = $_POST["search"];
+		if($search == ''){
+			$Phong = $p->layphonghoatdong();
+			include("php/datphong.php");
+		}else{
+			$Phong = $p->layphongtheoten($search);
+			include("php/datphong.php");
+		}
+        break;
+    case "datphong":
+		$isLogin = isset($_SESSION["khachhang"]);
+		
+		if($isLogin == FALSE){
+			$tmp= "datphong";
+			echo '<script>alert("vui lòng đăng nhập để đặt phòng")</script>';
+             include("php/signin.php");
+		}else{
+        $idphong = $_REQUEST["id"];
+        $phong = $p->layphongtheoid($idphong);
+        include("php/checkout.php");
+		}
+        break;
+	case "datmua":        
+        $giohang = laygiohang();
+        include("checkout.php");
+        break;
+		case "luudonhang":
+            // var_dump($_POST["txtsodienthoai"]) ;
+            $email = $_POST["txtemail"];
+            $hoten = $_POST["txthoten"];
+            $sodienthoai = $_POST["txtsodienthoai"];
+            $diachi = $_POST["txtdiachi"];
+            
+            // lưu thông tin khách nếu chưa có trong db (kiểm tra email có tồn tại chưa)
+            // xử lý thêm...
+         //   $kh = new KHACHHANG();
+           
+          $khachhang_id = $kh->themkhachhang($email,$sodienthoai,$hoten);
+            //var_dump($khachhang_id);
+            // lưu địa chỉ khách
+            $dc = new DIACHI();
+            $diachi_id = $dc->themdiachi($khachhang_id,$diachi);
+            
+            // lưu đơn hàng
+            $dh = new DONHANG();
+            $tongtien = tinhtiengiohang();
+            $donhang_id = $dh->themdonhang($khachhang_id,$diachi_id,$tongtien);
+            
+            // lưu chi tiết đơn hàng
+            $ct = new DONHANGCT();		
+            $giohang = laygiohang();
+            foreach($giohang as $mahang => $mh){
+                $dongia = $mh["giaban"];
+                $soluong = $mh["soluong"];
+                $thanhtien = $mh["sotien"];
+                $ct->themchitietdonhang($donhang_id,$mahang,$dongia,$soluong,$thanhtien);
+                $mh = new MATHANG();
+                $mh->capnhatsoluong($mahang, $soluong);
+            }
+            
+            // xóa giỏ hàng
+            xoagiohang();
+            
+            // chuyển đến trang cảm ơn
+            include("message.php");
+            break;
+	case "dangnhap":
+		include("loginform.php");
+		break;
+	case "xldangnhap":
+		$email = $_POST["txtemail"];
+        $matkhau = $_POST["txtmatkhau"];
+        if($kh->kiemtrakhachhanghople($email,$matkhau)==TRUE){
+            $_SESSION["khachhang"] = $kh->laythongtinkhachhang($email);
+            // đọc thông tin (đơn hàng) của kh
+			include("info.php");
+        }
+        else{
+            $tb = "Đăng nhập không thành công!";
+            include("loginform.php");
+        }
+        break;
+	case "xemthongtin":
+		// đọc thông tin
+		include("info.php"); // trang info.php hiển thị các đơn đã đặt
+		break;
+	case "dangxuat":
+		unset($_SESSION["khachhang"]);
+        include("main.php");
+		break;
 
-</html>
+    case "xemdonhang":
+        $donhang = $mh->docdonhang();
+		include("main.php");
+        break;
+        case "timkiem":
+            $timkiem = $_REQUEST["search"];
+            $mhct = $mh->timkiem($timkiem);
+            $mh->tangluotxem($mhct["id"]);
+            // var_dump($timkiem);
+            // var_dump($mhct);
+            // lấy thông tin chi tiết mặt hàng
+            // $mhct = $mh->laymathangtheoid($mahang);
+            // lấy các mặt hàng cùng danh mục
+            $madm = $mhct["danhmuc_id"];
+            $mathang = $mh->laymathangtheodanhmuc($madm);
+            include("detail_search.php");
+            break;
+
+        default:
+    
+        break;
+}
+?>

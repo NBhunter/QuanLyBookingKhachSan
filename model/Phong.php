@@ -94,6 +94,38 @@ class PHONG{
             exit();
         }
     }
+    public function layphongtheoten($name){// lấy những phòng đc sử dụng
+        $dbcon = DATABASE::connect();
+        try{
+            $sql = "SELECT * FROM phong WHERE trangthai = 1 and `TenPhong` like :name";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->bindValue(":name", '%'.$name.'%');
+            $cmd->execute();
+            $result = $cmd->fetchAll();
+            return $result;
+        }
+        catch(PDOException $e){
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn: $error_message</p>";
+            exit();
+        }
+    }
+    public function layphongtheoid($name){// lấy những phòng đc sử dụng
+        $dbcon = DATABASE::connect();
+        try{
+            $sql = "SELECT * FROM phong WHERE trangthai = 1 and `id` like :name";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->bindValue(":name", $name);
+            $cmd->execute();
+            $result = $cmd->fetch();
+            return $result;
+        }
+        catch(PDOException $e){
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn: $error_message</p>";
+            exit();
+        }
+    }
     public function layphongadmin(){// lấy tất cả phòng
         $dbcon = DATABASE::connect();
         try{
@@ -163,5 +195,26 @@ class PHONG{
 
         return $this;
     }
+    public function themPhong($tenphong,$gia,$mota,$motangan,$hinhanh,$loaiphong){// lấy tất cả phòng
+        $dbcon = DATABASE::connect();
+        try{
+            $sql = "INSERT INTO `phong`(`loaiphong`, `TenPhong`, `gia`, `mota`, `motangan`, `hinhanh`, `trangthai`) VALUES(:loaiphong,:tenphong,:gia,:mota,:motangan,:hinhanh,1)";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->bindValue(":loaiphong", $loaiphong);
+			$cmd->bindValue(":tenphong", $tenphong);
+			$cmd->bindValue(":gia", $gia);
+			$cmd->bindValue(":mota", $mota);
+			$cmd->bindValue(":motangan", $motangan);
+			$cmd->bindValue(":hinhanh", $hinhanh);
+            $result = $cmd->execute();            
+            return $result;
+        }
+        catch(PDOException $e){
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn: $error_message</p>";
+            exit();
+        }
+    }
+    
 }
 ?>

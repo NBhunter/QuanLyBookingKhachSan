@@ -1,25 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head><?php
-include("../model/database.php");
-include("../model/nguoidung.php");
-$nd = new NGUOIDUNG();
-var_dump($_SERVER["REQUEST_METHOD"]);
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-date_default_timezone_set("Asia/Ho_Chi_Minh");
-$t=time();
-$id = date("mdhis",$t);
-$nd->themnguoidung($id);
-	}
 
-?>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-	<title>Signup</title>
+	<link rel="shortcut icon" href="img/kienan.ico">
+	<title>Khách Sạn giường nằm - KA Hố tèo</title>
 	
 	<link rel="icon" type="image/x-icon" href="img/mon.ico">
 
@@ -52,19 +38,19 @@ button{align:center;}
 						<div class="form-header">
 							<h1>Đăng ký</h1>
 						</div>
-						<form method="POST">
+						<form method="post" action="?action=xlsignup">
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
 									<span class="form-label">HỌ TÊN</span>
-									<input class="form-control" name="name" type="text" required="" placeholder="Nhập họ tên">
+									<input class="form-control" name="txtname" type="text" required="" placeholder="Nhập họ tên">
 								</div>
 
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<span class="form-label">CMND/CCCD</span>
-									<input class="form-control" name="name" type="text" required="" placeholder="Nhập CMND/CCCD">
+									<input class="form-control" name="txtcccd" type="text" required="" placeholder="Nhập CMND/CCCD">
 								</div>
 							</div>
 						</div>
@@ -78,13 +64,13 @@ button{align:center;}
 								<div class="col-md-4">
 									<div class="form-group">
 										<span class="form-label">SDT</span>
-										<input class="form-control" name="name" type="text" placeholder="Nhập SDT"required>
+										<input class="form-control" name="sdt" type="text" placeholder="Nhập SDT"required>
 									</div>
 								</div>
 								<div class="col-md-5">
 									<div class="form-group">
 										<label for="email" class="form-label">Email</label>
-										<input type="email" class="form-control" id="email" name="email" required />
+										<input type="email" class="form-control" id="email" name="txtemail" required />
 									</div>
 								</div>
 							</div>
