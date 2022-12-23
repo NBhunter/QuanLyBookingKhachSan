@@ -5,53 +5,65 @@
 <input type="hidden" name="action" value="xulysua">
 <input type="hidden" name="txtid" value="<?php echo $m["id"]; ?>">
 <div class="form-group">    
-<label>Hãng sản xuất</label>    
-<select class="form-control" name="optdanhmuc">
-	<?php foreach ($danhmuc as $dm ) { ?>
-		<option value="<?php echo $dm["id"]; ?>" <?php if($dm["id"] == $m["danhmuc_id"]) echo "selected"; ?>><?php echo $dm["tendanhmuc"]; ?></option>
-	<?php } ?>
+<label>Loại phòng</label>    
+<select class="form-control" name="optloaiphong" value ="">
+	<?php
+	foreach($loaiphong as $l):if($m["loaiphong"] == $l["id"]){
+	?>
+		<option value="<?php echo $l["id"]; ?>" selected><?php echo $l["TenLoai"]; ?></option>
+	<?php
+	}
+	else{
+		?>
+		<option value="<?php echo $l["id"]; ?>"><?php echo $l["TenLoai"]; ?></option>
+	<?php
+	}
+	endforeach;
+	?>
 </select></div>
-<div class="form-group">    
-<label>Tên hàng</label>    
-<input class="form-control" type="text" name="txttenhang" required value="<?php echo $m["tenmathang"]; ?>">
-</div> 
-<div class="form-group">    
-<label>Mô tả</label>    
-<textarea class="form-control" name="txtmota" required><?php echo $m["mota"]; ?></textarea>
-</div> 
-<div class="form-group">    
-<label>Giá gốc</label>    
-<input class="form-control" type="number" name="txtgiagoc" value="<?php echo $m["giagoc"]; ?>" required>
-</div> 
-<div class="form-group">    
-<label>Giá bán</label>    
-<input class="form-control" type="number" name="txtgiaban" value="<?php echo $m["giaban"]; ?>" required>
-</div> 
-<div class="form-group">    
-<label>Số lượng tồn</label>    
-<input class="form-control" type="number" name="txtsoluongton" value="<?php echo $m["soluongton"]; ?>" required>
-</div> 
-<div class="form-group">    
-<label>Lượt xem</label>    
-<input class="form-control" type="number" name="txtluotxem" value="<?php echo $m["luotxem"]; ?>" required>
-</div> 
-<div class="form-group">    
-<label>Lượt mua</label>    
-<input class="form-control" type="number" name="txtluotmua" value="<?php echo $m["luotmua"]; ?>" required>
-</div> 
-<div id="hinh" class="form-group">
-	<label>Hình ảnh</label><br>
-	<input type="hidden" name="txthinhcu" value="<?php echo $m["hinhanh"]; ?>">
-	<img src="../../<?php echo $m["hinhanh"]; ?>" width="50"><br>
-	<input type="checkbox" id="chkdoianh" name="chkdoianh" value="1"> Đổi ảnh<br>
-</div>  
-<div id="file" class="form-group">  
-  <input type="file" class="form-control" name="filehinhanh">
+<div class="form-group">
+	<label>Tên Phòng</label>
+	<input class="form-control" type="text" name="txttenphong" required value="<?php echo $m["TenPhong"]; ?>">
 </div>
 <div class="form-group">
-<input class="btn btn-primary"  type="submit" value="Lưu">
-<input class="btn btn-warning"  type="reset" value="Hủy">
+	<label>Giá</label>
+	<input class="form-control" type="number" name="txtgia" value="<?php echo $m["gia"]; ?>" required >
 </div>
+<div class="form-group">
+	<label>Mô tả</label>
+	<textarea class="form-control" name="txtmota" required value=""><?php echo $m["mota"]; ?></textarea>
+</div>
+<div class="form-group">
+	<label>Mô tả ngắn</label>
+	<textarea class="form-control" name="txtmotangan"><?php echo $m["motangan"]; ?></textarea>
+</div>
+<div class="form-group">
+	<label>Hình ảnh</label>
+	<input class="form-control" type="file" name="filehinhanh"        >
+</div>
+<label>Trạng thái</label>    
+<select class="form-control" name="opttrangthai" value ="">
+	<?php
+	if($m["trangthai"] == 0){
+	?>
+		<option value="0" selected>Đang hoạt bảo trì</option>
+		<option value="1" >Đang hoạt động</option>
+	<?php
+	}
+	else{
+		?>
+		<option value="0" >Đang hoạt bảo trì</option>
+		<option value="1" selected>Đang hoạt động</option>
+	<?php
+	}
+	
+	?>
+</select></div>
+<div class="form-group">
+	<input type="submit" value="Lưu" class="btn btn-success">
+	<input type="reset" value="Hủy" class="btn btn-warning">
+</div>
+
 </form>
 </div>
 <!-- JQuery: hiển thị/tắt phần tử chọn file hình ảnh -->

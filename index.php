@@ -4,6 +4,7 @@ require("model/database.php");
 require("model/LoaiPhong.php");
 require("model/Phong.php");
 require("model/nguoidung.php");
+require("model/datphong.php");
 
 $lp = new LOAIPHONG();
 $p = new PHONG();
@@ -31,15 +32,21 @@ switch($action){
 	case "xlsignin": 
 		$email = $_POST["txtemail"];
         $matkhau = $_POST["txtmatkhau"];
+        if($nd->kiemtranguoidungbac1($email,$matkhau)==TRUE){
+            $_SESSION["nguoidung"] = $nd->laythongtinnguoidunghople($email);
+           // đọc thông tin (đơn hàng) của kh
+           
+           header("location:admin/index.php");
+           }
         if($nd->kiemtranguoidungbac2($email,$matkhau)==TRUE){
              $_SESSION["khachhang"] = $nd->laythongtinnguoidunghople($email);
             // đọc thông tin (đơn hàng) của kh
 			if($tmp == ""){
 				include("main.php");
 			}
-			
-			
         }
+        
+       
         else{
             echo '<script>alert("đăng nhập không thành công")</script>';
 			
@@ -108,54 +115,41 @@ switch($action){
 			echo '<script>alert("vui lòng đăng nhập để đặt phòng")</script>';
              include("php/signin.php");
 		}else{
+            var_dump($_SESSION["khachhang"]);
         $idphong = $_REQUEST["id"];
         $phong = $p->layphongtheoid($idphong);
         include("php/checkout.php");
 		}
         break;
-	case "datmua":        
-        $giohang = laygiohang();
-        include("checkout.php");
-        break;
-		case "luudonhang":
-            // var_dump($_POST["txtsodienthoai"]) ;
-            $email = $_POST["txtemail"];
-            $hoten = $_POST["txthoten"];
-            $sodienthoai = $_POST["txtsodienthoai"];
-            $diachi = $_POST["txtdiachi"];
-            
-            // lưu thông tin khách nếu chưa có trong db (kiểm tra email có tồn tại chưa)
-            // xử lý thêm...
-         //   $kh = new KHACHHANG();
-           
-          $khachhang_id = $kh->themkhachhang($email,$sodienthoai,$hoten);
-            //var_dump($khachhang_id);
-            // lưu địa chỉ khách
-            $dc = new DIACHI();
-            $diachi_id = $dc->themdiachi($khachhang_id,$diachi);
-            
-            // lưu đơn hàng
-            $dh = new DONHANG();
-            $tongtien = tinhtiengiohang();
-            $donhang_id = $dh->themdonhang($khachhang_id,$diachi_id,$tongtien);
-            
-            // lưu chi tiết đơn hàng
-            $ct = new DONHANGCT();		
-            $giohang = laygiohang();
-            foreach($giohang as $mahang => $mh){
-                $dongia = $mh["giaban"];
-                $soluong = $mh["soluong"];
-                $thanhtien = $mh["sotien"];
-                $ct->themchitietdonhang($donhang_id,$mahang,$dongia,$soluong,$thanhtien);
-                $mh = new MATHANG();
-                $mh->capnhatsoluong($mahang, $soluong);
+	case "checkout":      
+        
+        // $dp = new DATPHONG();
+        $id = $_SESSION["khachhang"]["id"];
+            $idphong = $_POST["idphong"];
+            $checkin = $_POST["checkin"];
+            $checkout = $_POST["checkout"];
+            $phong = $p->layphongtheoid($idphong);
+            $tongngay = ((strtotime($checkout) - strtotime($checkin))/ (60 * 60 * 24));
+            $thanhtien= (int)$tongngay*(int)$phong["gia"];
+            $t=time();
+			$iddatphong = date("mdhis",$t);
+        if($p->datphong($iddatphong,$id,$idphong,$checkin,$checkout))
+        {
+         
+            if($p->datphongct($iddatphong,$id,$idphong,$tongngay,$phong["gia"],$thanhtien)){
+                echo '<script>alert("đã đặt phòng thành công")</script>';
+                include("main.php");
             }
-            
-            // xóa giỏ hàng
-            xoagiohang();
-            
-            // chuyển đến trang cảm ơn
-            include("message.php");
+        }
+        break;
+		case "demo":
+            $checkin = $_POST["checkin"];
+            $checkout = $_POST["checkout"];
+            $checkin1 =date('Y-m-d', strtotime('-1 day', strtotime($checkin)));
+            $checkout1 = date('Y-m-d', strtotime('-1 day', strtotime($checkout)));
+            // $tongngay = ((strtotime($checkout) - strtotime($checkin)));
+            $Phong =  $p->layphongtheongay($checkin1,$checkout1);
+            include("php/datphong.php");
             break;
 	case "dangnhap":
 		include("loginform.php");

@@ -68,7 +68,7 @@
         <li class="active"><a href="#"></i>Bảng điều khiển </a></li>
         <li><a href=""><i class="fa-solid fa-users"></i> Quản lý tài khoản</a></li>
         <li><a href="../QLPhong/index.php"><i class="fa-solid fa-bed"></i> Quản lý phòng</a></li>
-        <li><a href=""><i class="fa-solid fa-bell-concierge"></i> Quản lý đặt phòng</a></li>
+        <li><a href="../QLdatphong/index.php"><i class="fa-solid fa-bell-concierge"></i> Quản lý đặt phòng</a></li>
       
       </ul><br>
     </div>

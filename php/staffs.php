@@ -119,7 +119,7 @@
 					<p><?php echo $n["thongtin"]; ?></p>
 					<p>
 						<a href="mailto:<?php echo $n["email"]; ?>"><i class="fa-solid fa-envelope"></i></a>
-						<a target="_blank" href="<?php echo $n["linkgithub"]; ?>"><i class="fa-brands fa-github"></i></a>
+						<a target="_blank" href="https://www.qrcodechimp.com/page/rnbtzro0pj3n?v=chk1671778401"><i class="fa-brands fa-github"></i></a>
 					</p>
 				  
 				</div>

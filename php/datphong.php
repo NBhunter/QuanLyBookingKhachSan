@@ -145,19 +145,19 @@
     <div class="col-sm-4">
 		<div class="s-form">
 			<div class="form-header"><h1>Tìm phòng</h1></div>
-			<form>				
+			<form method="post" action = "?action=demo">				
 				<div class='row'>
 					<div class="col-sm-6">
 						<div class="form-group">
 							<span class="form-label">Check In</span>
-							<input class="form-control" type="date" required>
+							<input class="form-control" name="checkin"type="date" value="<?php if(isset($checkin))echo $checkin;?>" required>
 						</div>
 					</div>
 					
 					<div class="col-sm-6">
 						<div class="form-group">
 							<span class="form-label">Check out</span>
-							<input class="form-control" type="date" required>
+							<input class="form-control" name="checkout"type="date" value="<?php if(isset($checkout))echo $checkout;?>" required>
 						</div>
 					</div>
 				</div>
@@ -232,7 +232,9 @@
 					<p>Mô tả:<?php echo $p["motangan"]; ?></p>
 					<p class="mb-0" align="right">
 						<a class="btn btn-readmore" href="#" target="_blank" >Xem Thêm</a>
+						<?php if($p["trangthai"]=='1'):?>
 						<a class="btn btn-book" href="?action=datphong&id=<?php echo $p['id']?>"  >Đặt phòng</a>
+						<?php endif;?>
 					</p>
 				</div>
 			</div>

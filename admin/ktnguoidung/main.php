@@ -4,4 +4,4 @@
 <p>Xin chào <?php echo $_SESSION["nguoidung"]["hoten"]; ?></p>
 
 </div>
-<?php include("../../php/footer.php"); ?>
+<?php include("../view/bottom.php"); ?>

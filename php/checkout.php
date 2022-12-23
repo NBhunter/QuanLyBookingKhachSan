@@ -147,7 +147,7 @@
 			<div class="form-header"><h1>Thanh to</h1></div>
 			<form method="post" action = "?action=checkout">				
 				<div class='row'>
-				<input class="form-control" name="id" type="hidden" value="<?php echo $phong["id"]?>">
+				<input class="form-control" name="idphong" type="hidden" value="<?php echo $phong["id"]?>">
 					<div class="col-sm-6">
 						<div class="form-group">
 							<span class="form-label">Check In</span>
@@ -214,7 +214,7 @@
 			</div>
 			<div class="col-8">
 				<div class="room-desc" style='margin:10px;'>
-					<h3><a href="" style="text-decoration:none; color:#2c5c2b;" ><?php echo $phong["TenPhong"]; ?></a></h3>
+					<h3><?php echo $phong["TenPhong"]; ?></h3>
 					<p>Giá cả đồ:<?php echo $phong["gia"]; ?> Đ</p>
 					<p>Mô tả:<?php echo $phong["mota"]; ?></p>
 				</div>
