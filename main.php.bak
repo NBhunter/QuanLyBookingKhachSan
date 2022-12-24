@@ -90,7 +90,7 @@ img{
 								với các món ăn chọn lọc thuần túy Việt Nam và các món ăn quốc tế Việt Nam. 
 								Nhà hàng phục vụ café, ăn sáng nhẹ, ăn trưa và tối hoặc phục vụ tại phòng.</p>
 								<p class="mb-0">
-									<a class="btn btn-readmore" href="?action=hotel" target="_self">See more</a>
+									<a class="btn btn-readmore" href="?action=about.php" target="_self">See more</a>
 								</p>
 							</div>
 						</div>

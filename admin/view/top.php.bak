@@ -26,8 +26,7 @@
 	font-weight:bold;
 }
 .nav>li>a{
-	color:#2c5c2b;
-}
+	color:#2c5c2b;}
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
 	background-color:#2c5c2b;
 }

@@ -14,7 +14,8 @@
 	<link rel="icon" type="image/x-icon" href="">
 
 	<!-- Google font -->
-
+	<link href="https://fonts.googleapis.com/css?family=Cardo:700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
 
 	<!-- Bootstrap -->
 	<!-- Bootstrap CSS -->
@@ -26,7 +27,7 @@
 
 	<script src="https://kit.fontawesome.com/97d6784897.js" crossorigin="anonymous"></script>
 <style>
-*{font-family:consolas;}
+
 .s-form{
 	background-color: #bed48c;
 	margin: auto;
@@ -53,7 +54,7 @@
 }
 
 .s-form .form-header h1 {
-	font-family: 'Cardo', serif;
+	font-family: 'consolas';
 	font-weight: 700;
 	text-transform: capitalize;
 	font-size: 38px;
@@ -134,35 +135,51 @@
 	font-weight: bold;
 }
 
+.r-card{
+	border-radius:5px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
 </style>
 </head>	
-<body>
+<body id="ka">
 		<?php include 'navbar.php'; ?>
 
 <div class="container">
   <div class="row">
+  
     <div class="col-sm-4">
 		<div class="s-form">
-			<div class="form-header"><h1>Thanh tón</h1></div>
-			<form method="post" action = "?action=checkout">				
+			<div class="form-header"><h1>Tìm phòng</h1></div>
+			<form method="post" action = "?action=demo">				
 				<div class='row'>
-				<input class="form-control" name="idphong" type="hidden" value="<?php echo $phong["id"]?>">
 					<div class="col-sm-6">
 						<div class="form-group">
 							<span class="form-label">Check In</span>
-							<input class="form-control" name="checkin" type="date" required>
+							<input class="form-control" name="checkin"type="date" value="<?php if(isset($checkin))echo $checkin;?>" required>
 						</div>
 					</div>
 					
 					<div class="col-sm-6">
 						<div class="form-group">
 							<span class="form-label">Check out</span>
-							<input class="form-control" name ="checkout"type="date" required>
+							<input class="form-control" name="checkout"type="date" value="<?php if(isset($checkout))echo $checkout;?>" required>
 						</div>
 					</div>
 				</div>
 				
-				
+				<div class='row'>
+					<div class="col">
+						<div class="form-group">
+							<span class="form-label">No of rooms</span>
+							<select class="form-control">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+							</select>
+							<span class="select-arrow"></span>
+						</div>
+					</div>
+				</div>
 				
 				<div class='row'>
 					<div class="col">
@@ -191,37 +208,51 @@
 				<div class='row'>
 					<div class="col">
 						<div class="form-btn">
-							<button class="check-btn" type="submit">Thanh toán</button>
+							<button class="check-btn">Check availability</button>
 						</div>
 					</div>
 				</div>
 			</form>
 	</div>
-	
-	<ul class="nav nav-pills nav-stacked"></ul>
+
+      <ul class="nav nav-pills nav-stacked"></ul>
       <!--<hr class="hidden-sm hidden-md hidden-lg">-->
     </div>
+	
     <div class="col-sm-8">
-      <h1>Thông tin phòng</h1>
-	  <div class="card">
-	  
-	<div class="row">
-	<div class="col-4">
-	<div class="room-img" style='margin:10px;'>
-					<img src="img/Room/<?php echo $phong["hinhanh"]; ?>" width='100%'>
+      <h1>Kết quả đồ đó</h1>
+	   <?php
+		foreach($Phong as $p):
+		?>
+	  <div class="r-card">
+		<div class="row">
+			<div class="col-4">
+				<div class="room-img" style='margin:10px;'>
+					<img src="img/Room/<?php echo $p["hinhanh"]; ?>" width='100%'>
 				</div>
 			</div>
 			<div class="col-8">
 				<div class="room-desc" style='margin:10px;'>
-					<h3><?php echo $phong["TenPhong"]; ?></h3>
-					<p>Giá cả đồ:<?php echo $phong["gia"]; ?> Đ</p>
-					<p>Mô tả:<?php echo $phong["mota"]; ?></p>
+					<h3><a href="" style="text-decoration:none; color:#2c5c2b;" ><?php echo $p["TenPhong"]; ?></a></h3>
+					<p>Giá cả đồ:<?php echo $p["gia"]; ?> Đ</p>
+					<p>Mô tả:<?php echo $p["motangan"]; ?></p>
+					<p class="mb-0" align="right">
+					<?php if($p["trangthai"]=='1'):?>
+						<a class="btn btn-readmore" href="#" target="_blank" >Xem Thêm</a>
+						
+						<a class="btn btn-book" href="?action=datphong&id=<?php echo $p['id']?>" >Đặt phòng</a>
+						<?php endif;?>
+					</p>
 				</div>
 			</div>
 		</div>
 		</div>
 		<br>
-
+		<?php
+		endforeach;
+		?>
+	</div>
+	
 	  
 																																																																																																																																																																																																																																																																																																																																																																																								</div>
     </div>

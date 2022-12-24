@@ -1,5 +1,5 @@
 <?php 
-session_start();
+
 require("model/database.php");
 require("model/LoaiPhong.php");
 require("model/Phong.php");

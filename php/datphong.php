@@ -8,10 +8,9 @@
 	<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<link rel="shortcut icon" href="img/kienan.ico">
+	<link rel="icon" type="image/x-icon" href="img/logoka.png">
 	<title>Khách Sạn giường nằm - KA Hố tèo</title>
 	
-	<link rel="icon" type="image/x-icon" href="">
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Cardo:700" rel="stylesheet">
@@ -34,7 +33,7 @@
 	padding: 10px ;
 	border-radius: 3px;
 }
-.submit-btn{
+.check-btn{
 	margin: 10px 0px;
 	color: #fff;
 	background-color: #2c5c2b;
@@ -54,7 +53,7 @@
 }
 
 .s-form .form-header h1 {
-	font-family: 'Cardo', serif;
+	font-family: 'consolas';
 	font-weight: 700;
 	text-transform: capitalize;
 	font-size: 38px;
@@ -135,13 +134,18 @@
 	font-weight: bold;
 }
 
+.r-card{
+	border-radius:5px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
 </style>
 </head>	
-<body>
+<body id="ka">
 		<?php include 'navbar.php'; ?>
 
 <div class="container">
   <div class="row">
+  
     <div class="col-sm-4">
 		<div class="s-form">
 			<div class="form-header"><h1>Tìm phòng</h1></div>
@@ -203,7 +207,7 @@
 				<div class='row'>
 					<div class="col">
 						<div class="form-btn">
-							<button class="submit-btn">Check availability</button>
+							<button class="check-btn">Check availability</button>
 						</div>
 					</div>
 				</div>
@@ -213,14 +217,15 @@
       <ul class="nav nav-pills nav-stacked"></ul>
       <!--<hr class="hidden-sm hidden-md hidden-lg">-->
     </div>
+	
     <div class="col-sm-8">
       <h1>Kết quả đồ đó</h1>
-	  <div class="card">
-	  <?php
-	foreach($Phong as $p):
-	?>
-	<div class="row">
-	<div class="col-4">
+	   <?php
+		foreach($Phong as $p):
+		?>
+	  <div class="r-card">
+		<div class="row">
+			<div class="col-4">
 				<div class="room-img" style='margin:10px;'>
 					<img src="img/Room/<?php echo $p["hinhanh"]; ?>" width='100%'>
 				</div>
@@ -234,7 +239,7 @@
 					<?php if($p["trangthai"]=='1'):?>
 						<a class="btn btn-readmore" href="#" target="_blank" >Xem Thêm</a>
 						
-						<a class="btn btn-book" href="?action=datphong&id=<?php echo $p['id']?>"  >Đặt phòng</a>
+						<a class="btn btn-book" href="?action=datphong&id=<?php echo $p['id']?>" >Đặt phòng</a>
 						<?php endif;?>
 					</p>
 				</div>
@@ -242,9 +247,11 @@
 		</div>
 		</div>
 		<br>
-	<?php
-	endforeach;
-	?>
+		<?php
+		endforeach;
+		?>
+	</div>
+	
 	  
 																																																																																																																																																																																																																																																																																																																																																																																								</div>
     </div>

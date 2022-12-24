@@ -9,7 +9,7 @@
 
 	<title>Booking</title>
 	
-	<link rel="icon" type="image/x-icon" href="img/mon.ico">
+	<link rel="icon" type="image/x-icon" href="img/logoka.png">
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Cardo:700" rel="stylesheet">
@@ -25,7 +25,7 @@
 
 	<script src="https://kit.fontawesome.com/97d6784897.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body id="ka">
 	<?php include 'php/navbar.php'; ?>
 
 	<div id="booking" class="section">

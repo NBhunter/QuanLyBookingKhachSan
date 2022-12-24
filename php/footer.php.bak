@@ -101,7 +101,7 @@ footer{
   
 	<div class="row">
 		<div class="col-4">
-			<h3 id="dt4" style="height:40px;"><img src="img/logoka.png" width="40px" style="margin-left:10px;"></i> KIEN AN HOTEL</h3>
+			<h3 id="dt4" style="height:40px;"><img id="logo" src="img/logoka.png" width="40px" style="margin-left:10px;"></i> KIEN AN HOTEL</h3>
 			<hr>
 			<p><h5 id="dt5"><b> - Zalo: 0369208649</b></h5></p>
 			<p><h5 id="dt5"><b> - Fb page: KIEN AN HOTEL</b></h5></p>
