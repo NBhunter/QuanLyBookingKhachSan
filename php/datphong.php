@@ -231,8 +231,9 @@
 					<p>Giá cả đồ:<?php echo $p["gia"]; ?> Đ</p>
 					<p>Mô tả:<?php echo $p["motangan"]; ?></p>
 					<p class="mb-0" align="right">
+					<?php if($p["trangthai"]=='1'):?>
 						<a class="btn btn-readmore" href="#" target="_blank" >Xem Thêm</a>
-						<?php if($p["trangthai"]=='1'):?>
+						
 						<a class="btn btn-book" href="?action=datphong&id=<?php echo $p['id']?>"  >Đặt phòng</a>
 						<?php endif;?>
 					</p>

@@ -367,6 +367,23 @@ $dbcon->close();
 
         return $this;
     }
+    public function suakhachhang($ten,$sdt,$id){
+        $dbcon = DATABASE::connect();
+        try{
+            $sql = "UPDATE `khachhang` SET `hoten`=:ten,`sodienthoai`=:sdt WHERE `id`=:id";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->bindValue(":ten", $ten);
+            $cmd->bindValue(":sdt", $sdt);
+            $cmd->bindValue(":id", $id);
+            $result = $cmd->execute();   
+            return $result;
+        }
+        catch(PDOException $e){
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn3: $error_message</p>";
+            exit();
+        }
+    }
 }
 
 ?>

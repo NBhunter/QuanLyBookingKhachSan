@@ -39,10 +39,11 @@
 </div>
 <div class="form-group">
 	<label>Hình ảnh</label>
+	<input type="hidden" name="txthinhcu" value="<?php echo $m["hinhanh"]; ?>">
 	<input class="form-control" type="file" name="filehinhanh"        >
 </div>
 <label>Trạng thái</label>    
-<select class="form-control" name="opttrangthai" value ="">
+<select class="form-control" name="trangthai" value ="">
 	<?php
 	if($m["trangthai"] == 0){
 	?>

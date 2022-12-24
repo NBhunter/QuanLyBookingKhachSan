@@ -22,10 +22,11 @@ switch($action){
  include("main.php");
  break;
  case "dangxuat":
-    header("location:../../php/signin.php");
+    unset($_SESSION["nguoidung"]);
+    header("location:../../index.php?action=dangxuat");
  break;
  case "dangnhap":
-    header("location:../../php/signin.php");
+    header("location:../../index.php?action=signin");
  break;
  case "xldangnhap":
  $email = $_GET["txtemail"];

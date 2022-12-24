@@ -29,16 +29,16 @@
 		<td><?php  echo $p["ngaytraphong"]; ?></td>
 		<td><?php  echo number_format($p["thanhtien"]); ?> Đ</td>
 		<td class="text-center">
-								<?php if($p['trangthai'] == 0): ?>
+								<?php if($p['status'] == 0): ?>
 									<span class="badge badge-primary">Chưa checkin</span>
-								<?php elseif($p['trangthai'] == 1): ?>
+								<?php elseif($p['status'] == 1): ?>
 									<span class="badge badge-info">Đã checkin</span>
-									<?php elseif($p['trangthai'] == 2): ?>
+									<?php elseif($p['status'] == 2): ?>
 									<span class="badge badge-info">Đã checkout</span>
 								<?php endif; ?>
 							</td>
-		<td><a class="btn btn-warning" href="index.php?action=sua&id=<?php echo $p["id"]; ?>"><span class="glyphicon glyphicon-edit"> </span></a></td>
-		<td><a class="btn btn-danger" href="index.php?action=xoa&id=<?php echo $p["id"]; ?>"><span class="glyphicon glyphicon-trash"></span></a></td>
+		<td><a class="btn btn-warning" href="index.php?action=sua&id=<?php echo $p["iddatphong"]; ?>"><span class="glyphicon glyphicon-edit"> </span></a></td>
+		<td><a class="btn btn-danger" href="index.php?action=xoa&id=<?php echo $p["iddatphong"]; ?>"><span class="glyphicon glyphicon-trash"></span></a></td>
 	</tr>
 	<?php
 	endforeach;

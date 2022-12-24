@@ -296,11 +296,11 @@ class PHONG{
         public function layphongtheongay($checkin,$checkout){// lấy những phòng đc sử dụng
         $dbcon = DATABASE::connect();
         try{
-            $sql = "SELECT p.* FROM phong p,`datphong` dp WHERE p.id not like dp.id_phong and p.trangthai like '1' and
+            $sql = "SELECT p.* FROM phong p,`datphong` d WHERE p.id not like d.id_phong and d.status not like '2' and
             
-            dp.ngaynhanphong BETWEEN str_to_date(:checkin,'%Y-%m-%d') AND str_to_date(:checkout,'%Y-%m-%d') or
+            d.ngaynhanphong BETWEEN str_to_date(:checkin,'%Y-%m-%d') AND str_to_date(:checkout,'%Y-%m-%d') or
             
-            dp.ngaytraphong BETWEEN str_to_date(:checkin,'%Y-%m-%d') AND str_to_date(:checkout,'%Y-%m-%d')GROUP BY p.id;";
+            d.ngaytraphong BETWEEN str_to_date(:checkin,'%Y-%m-%d') AND str_to_date(:checkout,'%Y-%m-%d')GROUP BY p.id;";
             $cmd = $dbcon->prepare($sql);
             $cmd->bindValue(":checkin", $checkin);
             $cmd->bindValue(":checkout", $checkout);
@@ -318,7 +318,7 @@ class PHONG{
     public function layphongdadatadmin(){// lấy tất cả phòng
         $dbcon = DATABASE::connect();
         try{
-            $sql = "SELECT p.*,dp.*,dpct.*,kh.* FROM phong p, datphong dp, donphong_ct dpct,khachhang kh WHERE p.id = dp.id_phong and dp.id = dpct.id_datphong and dp.id_khachhang = kh.id";
+            $sql = "SELECT p.*,dp.*,dp. id as iddatphong,dpct.*,kh.* FROM phong p, datphong dp, donphong_ct dpct,khachhang kh WHERE p.id = dp.id_phong and dp.id = dpct.id_datphong and dp.id_khachhang = kh.id";
             $cmd = $dbcon->prepare($sql);
             $cmd->execute();
             $result = $cmd->fetchAll();
@@ -330,5 +330,82 @@ class PHONG{
             exit();
         }
     }
+    public function suaPhong($id,$tenphong,$gia,$mota,$motangan,$hinhanh,$loaiphong,$trangthai){// lấy tất cả phòng
+        $dbcon = DATABASE::connect();
+        try{
+            $sql = "UPDATE `phong` SET `loaiphong`=:loaiphong,`TenPhong`=:tenphong,`gia`=:gia,`mota`=:mota,
+            `motangan`=:motangan,`hinhanh`=:hinhanh,`trangthai`=:trangthai WHERE `id`=:id  ";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->bindValue(":loaiphong", $loaiphong);
+            $cmd->bindValue(":tenphong", $tenphong);
+            $cmd->bindValue(":gia", $gia);
+            $cmd->bindValue(":mota", $mota);
+            $cmd->bindValue(":motangan", $motangan);
+            $cmd->bindValue(":hinhanh", $hinhanh);
+            $cmd->bindValue(":trangthai", $trangthai);
+            $cmd->bindValue(":id", $id);
+            $result = $cmd->execute();            
+            return $result;
+        }
+        catch(PDOException $e){
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn: $error_message</p>";
+            exit();
+        }
+    }
+    
+    public function laydatphongtheoadminid($name){// lấy những phòng đc sử dụng
+        $dbcon = DATABASE::connect();
+        try{
+            $sql = "SELECT p.*,dp.*,dp.id as iddatphong,kh.id as idkh,dpct.*,kh.* FROM phong p, datphong dp, donphong_ct dpct,khachhang kh WHERE p.id = dp.id_phong and dp.id = dpct.id_datphong and dp.id_khachhang = kh.id and dp.id  like :name";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->bindValue(":name", $name);
+            $cmd->execute();
+            $result = $cmd->fetch();
+            return $result;
+        }
+        catch(PDOException $e){
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn: $error_message</p>";
+            exit();
+        }
+    }
+    public function suadatPhong($id,$idphong,$ngaytra,$trangthai){// lấy tất cả phòng
+        $dbcon = DATABASE::connect();
+        try{
+            $sql = "UPDATE `datphong` SET `id_Phong`=:idphong,`ngaytraphong`=:ngaytraphong,`status`=:trangthai WHERE `id`=:id  ";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->bindValue(":idphong", $idphong);
+            $cmd->bindValue(":ngaytraphong", $ngaytra);
+            $cmd->bindValue(":trangthai", $trangthai);
+            $cmd->bindValue(":id", $id);
+            $result = $cmd->execute();            
+            return $result;
+        }
+        catch(PDOException $e){
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn1: $error_message</p>";
+            exit();
+        }
+    }
+    public function suadatPhongct($id,$idphong,$songay,$thanhtien){// lấy tất cả phòng
+        $dbcon = DATABASE::connect();
+        try{
+            $sql = "UPDATE `donphong_ct` SET `id_Phong`=:idphong,`songay`=:songay,`thanhtien`=:thanhtien WHERE `id_datphong`=:id  ";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->bindValue(":idphong", $idphong);
+            $cmd->bindValue(":songay", $songay);
+            $cmd->bindValue(":thanhtien", $thanhtien);
+            $cmd->bindValue(":id", $id);
+            $result = $cmd->execute();            
+            return $result;
+        }
+        catch(PDOException $e){
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn2: $error_message</p>";
+            exit();
+        }
+    }
 }
+
 ?>
