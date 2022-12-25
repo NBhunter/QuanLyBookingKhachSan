@@ -1,18 +1,23 @@
 <?php include("../view/top.php");
 
 ?>
- 
-<h3>Quản lý Phòng đã đặt</h3> 
+ <body  style="background-image: url('../../img/15.jpg');">
+<h2 style="color: white">Quản lý Phòng đã đặt</h2> 
 <br>
 <!-- <a href="index.php?action=them" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span> Thêm Phòng</a> -->
 <br> <br> 
-<table class="table table-hover">
+<table class="table table-hover" style="background-color: white; color: black;
+  border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background-color: white;">
 	<tr>
 		<th>Tên Phòng</th>
 		<th>Giá </th>
 		<th>Người thuê</th>
-        <th>Ngày checkin</th>
-		<th>Ngày checkout</th>
+        <th>Check In</th>
+		<th>Check Out</th>
 		<th>Tổng tiền</th>
 		<th>Trạng thái</th>		
 		<th>Sửa</th>
@@ -44,4 +49,5 @@
 	endforeach;
 	?>
 </table>
+</body>
 <?php include("../view/bottom.php"); ?>

@@ -15,7 +15,7 @@
   <style>
 .row.content {height: 1000px}
 .sidenav {
-	background-color: #bed48c; 
+	background-color: white; 
 	height: 100%;
 }
 @media screen and (max-width: 767px) { .row.content {height: auto;} }
@@ -37,7 +37,10 @@
 	color:white;
 }
 
-.dropdown-toggle{color:#2c5c2b;}
+.dropdown-toggle{
+	color:white;
+	font-size: 20px;
+}
 
   </style>
 </head>

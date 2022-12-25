@@ -4,12 +4,17 @@ require_once("../../model/Phong.php");
 $DSP = new  PHONG();
 $Phong = $DSP->layphongadmin();
 ?>
- 
-<h3>Quản lý Phòng</h3> 
+ <body style="background-image: url('../../img/pp.jpg'); width: 100%;">
+<h1 style="color:white; text-align:left;">Quản lý Phòng</h1> 
 <br>
 <a href="index.php?action=them" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span> Thêm Phòng</a>
 <br> <br> 
-<table class="table table-hover">
+<table class="table table-hover" style="background-color: white; color:black;
+border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background-color: white;">
 	<tr>
 		<th>Tên Phòng</th>
 		<th>Giá </th>
@@ -33,9 +38,9 @@ $Phong = $DSP->layphongadmin();
 		<td><img src="../../img/Room/<?php echo $p["hinhanh"]; ?>" width="80" class="img-thumbnail"></td>
 		<td class="text-center">
 								<?php if($p['trangthai'] == 0): ?>
-									<span class="badge badge-primary">Phòng đang bảo trì</span>
+									<span class="badge badge-danger">Phòng đang bảo trì</span>
 								<?php elseif($p['trangthai'] == 1): ?>
-									<span class="badge badge-info">Phòng đang hoạt động</span>
+									<span class="badge badge-success">Phòng đang hoạt động</span>
 								
 								<?php endif; ?>
 							</td>
@@ -46,4 +51,5 @@ $Phong = $DSP->layphongadmin();
 	endforeach;
 	?>
 </table>
+</body>
 <?php include("../view/bottom.php"); ?>
