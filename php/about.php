@@ -31,23 +31,25 @@ img{
 .des p{
 	text-indent:30px;
 	padding-top:10px;
-}
+}#ka{
 
+	background-color: #F9FFEB;
+}
 </style>
 </head>	
-<body id="ka" >
+<body id="ka"  >
 		<?php include 'navbar.php'; ?>
 
 
-<div class="container" >
+<div class="container">
   <div class="row">
     <div class="col-sm-4">
-      <h2 style="font-style:italic;background-color:#DDE5B6;font-weight:bold;text-align:center;">CONTACT</h2>
+      <h2 style="font-style:italic;">CONTACT</h2>
 	  <img src="img/about/recep.jpg" class="card-img-top" alt="ava" style="width: 100%;">
       <h6 style="padding-top:10px;"><b>HOTLINE: 0941747540 - ZALO:098848653</b></h6>
 	  <h6 style="padding-top:10px;"><b>EMAIL: kienan@gmail.com</b></h6>
 	  <br>
-      <h4 style="font-style:italic;background-color:#DDE5B6;font-weight:bold;text-align:center;">TIỆN ÍCH KHÁCH SẠN</h4>
+      <h4 style="font-style:italic;">TIỆN ÍCH KHÁCH SẠN</h4>
 	  <img src="img/about/nhahang1.jpg" class="card-img-top" alt="ava" style="width: 100%;">
 		 <div class="des">
 			<p>Nghỉ ngơi sau một chuyến đi xa tại phòng nghỉ Khách sạn. 
@@ -62,7 +64,7 @@ img{
     </div>
 	
     <div class="col-sm-8">
-      <h2 style="font-style:italic;background-color:#DDE5B6;font-weight:bold;text-align:center;">GIỚI THIỆU</h2>
+      <h2 style="font-style:italic;">GIỚI THIỆU</h2>
 	  <img src="img/about/ks.jpg" style="width: 100%;">
 		<br></br>
 		<h5>Thành lập: ngày 15, tháng 7, năm 2017</h5>
@@ -76,7 +78,7 @@ img{
 			sân Tennis và các khu vui chơi giải trí khác được quy tụ trong một khuôn viên rộng lớn gần 15.000 m2 .</p>
 		</div>
       
-	  <h2 style="font-style:italic;background-color:#DDE5B6;font-weight:bold;">ROOM</h2>
+	  <h2 style="font-style:italic;">ROOM</h2>
 	  <div class='row'>
 		
 		<div class='col-6'><img src="img/about/kh2.jpg" class="card-img-top" alt="ava" style="width: 100%;"></div>

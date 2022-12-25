@@ -39,7 +39,7 @@ a.btn.btn-res{
 
 </head>	
 
-<body>
+<body style="background-color: #F9FFEB;">
 		<?php include 'navbar.php'; ?>
 
     <div class="container">

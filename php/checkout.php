@@ -143,7 +143,7 @@
   <div class="row">
     <div class="col-sm-4">
 		<div class="s-form">
-			<div class="form-header"><h1>Thanh tón</h1></div>
+			<div class="form-header"><h1>Thanh Toán</h1></div>
 			<form method="post" action = "?action=checkout">				
 				<div class='row'>
 				<input class="form-control" name="idphong" type="hidden" value="<?php echo $phong["id"]?>">

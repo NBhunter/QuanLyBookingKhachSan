@@ -99,7 +99,7 @@ img {
 			<!-- Menu: sử dụng navbar -->
 			
 			<div class="about-section">
-			  <h1 style="font-weight:bold;">NHÂN SỰ</h1>
+			  <h1>NHÂN SỰ</h1>
 			</div>
 			<br>
 			<div class="row">
