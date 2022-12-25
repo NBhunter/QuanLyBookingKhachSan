@@ -148,7 +148,7 @@
   
     <div class="col-sm-4">
 		<div class="s-form">
-			<div class="form-header"><h1>Tìm phòng</h1></div>
+			<div class="form-header"><h1>SEARCH</h1></div>
 			<form method="post" action = "?action=demo">				
 				<div class='row'>
 					<div class="col-sm-6">
@@ -219,7 +219,7 @@
     </div>
 	
     <div class="col-sm-8">
-      <h1>Kết quả đồ đó</h1>
+      <h2 style="font-weight:bold;">KẾT QUẢ TÌM ĐƯỢC</h2>
 	   <?php
 		foreach($Phong as $p):
 		?>
@@ -233,8 +233,8 @@
 			<div class="col-8">
 				<div class="room-desc" style='margin:10px;'>
 					<h3><a href="" style="text-decoration:none; color:#2c5c2b;" ><?php echo $p["TenPhong"]; ?></a></h3>
-					<p>Giá cả đồ:<?php echo $p["gia"]; ?> Đ</p>
-					<p>Mô tả:<?php echo $p["motangan"]; ?></p>
+					<p>Giá phòng: <?php echo $p["gia"]; ?> Đ</p>
+					<p>Mô tả: <?php echo $p["motangan"]; ?></p>
 					<p class="mb-0" align="right">
 					<?php if($p["trangthai"]=='1'):?>
 						<a class="btn btn-readmore" href="#" target="_blank" >Xem Thêm</a>

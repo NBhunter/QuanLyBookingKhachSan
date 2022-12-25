@@ -135,7 +135,7 @@ footer{
 		</div>
 		
 		<div class="col-4">
-			<h3 id="dt5" style="height:40px;"><i class="fa fa-phone" style="font-size:35px;color:green; width:8%; height:10%;"></i>Tổng đài hỗ trợ miễn phí</h3>
+			<h4 id="dt5" style="height:40px;"><i class="fa fa-phone" style="font-size:25px;color:green; width:8%; height:10%;"></i>Tổng đài hỗ trợ miễn phí</h4>
 			<hr>
 			<p><h5 id="dt5"><b> - Hỗ trợ đặt phòng: 098675848 (24/24)</b></h></p>
 			<p><h5 id="dt5"><b> - Hỗ trợ tư vấn: 0979519572 (24/24)</b></h></p>
