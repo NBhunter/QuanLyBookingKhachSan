@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Khách sạn giường nằm - Trang quản trị</title>
+  <title>KHÁCH SẠN KIẾN AN - Trang quản trị</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -53,7 +53,7 @@
         <li><a href="">Quản lý tài khoản</a></li>
         <li><a href="../QLPhong/">Quản lý phòng</a></li>
         <li><a href="">Quản lý đặt phòng</a></li>
-        <li><a href="">Khác...</a></li>        
+            
       </ul>
     </div>
   </div>
@@ -80,8 +80,8 @@
         <!-- Thông tin người dùng - sẽ bổ sung ở bài thực hành sau -->          
         <div class="dropdown" style="text-align: right;">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <span class="glyphicon glyphicon-user"></span> Chào bà 
-			<?php  if(isset($_SESSION["nguoidung"]))echo $_SESSION["nguoidung"]["hoten"];?> nha
+            <span class="glyphicon glyphicon-user"></span> Chào 
+			<?php  if(isset($_SESSION["nguoidung"]))echo $_SESSION["nguoidung"]["hoten"];?>
             <span class="caret"></span>
           </a>
             

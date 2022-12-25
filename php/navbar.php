@@ -22,24 +22,24 @@
         <div class="container">
           <div class="row align-items-center position-relative">
 
-            <div class="col-lg-5 text-center">
+            <div class="col-lg-5 text-center" >
               <nav class="site-navigation text-right ml-auto " role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-                  <li class="active"><a href="index.php" class="nav-link">Home</a></li>
+                  <li class="active"><a href="index.php" class="nav-link" style="font-weight:bold;">Home</a></li>
                   <li class="dropdown">
-						<a>About</a>
+						<a style="font-weight:bold;">About</a>
 						  <ul class="dropdown-content" style="">
-							<li><a href="?action=hotel"><i class="fa-solid fa-hotel"></i> Hotel</a></li>
-							<li><a href="?action=staffs"><i class="fa-solid fa-clipboard-user"></i> Staffs</a></li>
+							<li><a href="?action=hotel"><i class="fa-solid fa-hotel" style="font-weight:bold;"></i> Hotel</a></li>
+							<li><a href="?action=staffs"><i class="fa-solid fa-clipboard-user" style="font-weight:bold;"></i> Staffs</a></li>
 						  </ul>
 				  </li>
-                  <li><a href="?action=Reservation" class="nav-link">Reservation</a></li>
+                  <li><a href="?action=Reservation" class="nav-link" style="font-weight:bold;">Reservation</a></li>
                 </ul>
               </nav>
             </div>
             <div class="col-lg-2 text-center">
               <div class="site-logo">
-                <a href="index.php">Booking</a>
+                <a href="index.php" style="font-weight:bold;color:#89ba16;font-style:italic;font-size:30px;">BOOKING</a>
               </div>
               <div class="ml-auto toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3 text-black"></span></a></div>
             </div>
@@ -51,7 +51,7 @@
 
 		if(!isset($_SESSION["khachhang"])){ ?>
         
-        <li><a href="?action=signin" class="nav-link">Sign in</a></li>
+        <li><a href="?action=signin" class="nav-link" style="font-weight:bold;">Sign in</a></li>
 		<?php  
 		}
    
@@ -68,9 +68,9 @@
           <li>
 					<form method="post" action= "?action=searchroom">
             
-						<input type="text" name="search" placeholder="Search..">
+						<input type="text" name="search" placeholder="Search.." style="width: 250px;">
             
-            <button class="submit-btn" type="submit" style="border-radius: 4px; background-color: #89ba16;border: 2px solid #89ba16;">Tìm</button>
+            <button class="submit-btn" type="submit" style="border-radius: 4px; background-color: #89ba16;border: 2px solid #89ba16;width:90px; font-weight:bold;">Search</button>
 					</form>
           </li>
           

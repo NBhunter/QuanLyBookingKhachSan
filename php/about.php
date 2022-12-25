@@ -33,20 +33,19 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-      <h1>CONTACT</h1>
-	   <img src="img/about/letan.jpg" class="card-img-top" alt="ava" style="width: 100%;">
-      <h5>HOTLINE: 0941747540 - ZALO:098848653</h5>
-	  <h5>EMAIL: kienan@gmail.com</h5>
-      <h3>TIỆN ÍCH KHÁCH SẠN</h3>
-	  <img src="img/about/nhahang.jpg" class="card-img-top" alt="ava" style="width: 100%;">
-		 <p>Nghỉ ngơi sau một chuyến đi xa tại phòng nghỉ Khách sạn, 
+      <h2 style="font-style:italic;">CONTACT</h2>
+	   <img src="img/about/recep.jpg" class="card-img-top" alt="ava" style="width: 100%;">
+      <h6>HOTLINE: 0941747540 - ZALO:098848653</h6>
+	  <h6>EMAIL: kienan@gmail.com</h6>
+	  <br>
+      <h4 style="font-style:italic;">TIỆN ÍCH KHÁCH SẠN</h4>
+	  <img src="img/about/nhahang1.jpg" class="card-img-top" alt="ava" style="width: 100%;">
+		 <p>Nghỉ ngơi sau một chuyến đi xa tại phòng nghỉ Khách sạn. 
 			 Quý khách hãy tìm đến với dư vị ẩm thực phong phú của Nhà hàng Kiến An. 
-			 Tại đây với Nhà hàng Á và Nhà hàng Âu,
-			 Quý khách có thể lựa chọn cho mình nhiều phong cách ẩm thực khác nhau
-			 và các món đặc sản An Giang đến những món ăn nổi tiếng Việt Nam </p>
-		<img src="img/about/beboi.jpg" class="card-img-top" alt="ava" style="width: 100%;">
-		<p>Bể bơi Hoàng Sơn hiện diện với những làn nước xanh như một nét tô điểm duyên dáng cho Khách sạn. 
-			Sau những giờ nghỉ ngơi tại phòng nghỉ Khách sạn và thưởng thức các món ăn độc đáo, 
+			 </p>
+		<img src="img/about/pool.jpg" class="card-img-top" alt="ava" style="width: 100%;">
+		<p>Bể bơi hiện diện với những làn nước xanh như một nét tô điểm duyên dáng cho Khách sạn. 
+			Sau những giờ nghỉ ngơi tại phòng nghỉ Khách sạn và thưởng thức các món ăn độc đáo.
 			Quý khách sẽ thư giãn với làn nước trong vắt, mát lạnh của Bể bơi. </p>
       <ul class="nav nav-pills nav-stacked">
        
@@ -54,8 +53,8 @@
       <!--<hr class="hidden-sm hidden-md hidden-lg">-->
     </div>
     <div class="col-sm-8">
-      <h1>INTRODUCE</h1>
-	  <img src="img/about/khachsan.jpg" style="width: 100%;">
+      <h2 style="font-style:italic;">INTRODUCE</h2>
+	  <img src="img/about/ks.jpg" style="width: 100%;">
 		<br></br>
       <h5>Thành lập: ngày 15, tháng 7, năm 2017</h5>
       <p>Khách sạn Kiến An tọa lạc gần quảng trường Trưng Nữ Vương  - Nằm giữa trung tâm kinh tế và văn hóa của Thành Phố Long Xuyên, 
@@ -65,11 +64,11 @@
 		Khách sạn Kiến An không chỉ đáp ứng hoàn hảo nhu cầu nghỉ ngơi của Quý khách mà còn mang đến những giây phút thư giãn giải trí tuyệt vời và để lại dư vị ấn tượng trong văn hóa ẩm thực nơi đây. 
 		Khách sạn là sự kết hợp hài hòa của phong cách mang màu sắc sang trọng, hiện đại và cổ kính bao gồm cả quần thể Nhà hàng, Bể Bơi,
 		sân Tennis và các khu vui chơi giải trí khác được quy tụ trong một khuôn viên rộng lớn gần 15.000 m2 .</p>
-      <h2>ROOM</h2>
+      <h2 style="font-style:italic;">ROOM</h2>
 	  <div class='row'>
-		<div class='col-4'><img src="img/about/phongdon.jpg" class="card-img-top" alt="ava" style="width: 100%;"></div>
-		<div class='col-4'><img src="img/about/phongdoi.jpg" class="card-img-top" alt="ava" style="width: 100%;"></div>
-		<div class='col-4'><img src="img/about/phong3.jpg" class="card-img-top" alt="ava" style="width: 100%;"></div>
+		
+		<div class='col-6'><img src="img/about/kh2.jpg" class="card-img-top" alt="ava" style="width: 100%;"></div>
+		<div class='col-6'><img src="img/about/kh3.jpg" class="card-img-top" alt="ava" style="width: 100%;"></div>
 		</div>
       <p>Khách Kiến An sạn được thiết kế bao gồm 12 tầng và 214 phòng các loại với nội thất cao cấp và sang trọng.
 		Tất cả các phòng nghỉ của Khách sạn đều có cửa sổ lớn nhìn ra không gian bên ngoài với xa xa là khung cảnh non nước hữu tình đầy thơ mộng và cảnh đẹp lung linh của Thành phố Long Xuyên khi màn đêm buông xuống để mặc những ánh đèn đua nhau thắp lên. Hơn thế nữa,  

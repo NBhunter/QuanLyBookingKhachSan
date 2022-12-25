@@ -8,7 +8,7 @@
 	<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Khách Sạn giường nằm - KA Hố tèo</title>
+	<title>KHÁCH SẠN KIẾN AN </title>
 	
     <link rel="shortcut icon" href="img/kienan.ico">
 	<link rel="icon" type="image/x-icon" href="img/mon.ico">
@@ -29,7 +29,7 @@
 
 <style>
 .main{
-	background-color:#ccc;
+	background-color:white;
 	padding:10px;
 }
 </style>
@@ -39,57 +39,59 @@
 <body>
 		<?php include 'php/navbar.php'; ?>
 	<header>
-		<img src='img/banner.jpg' width='100%'>
+		<img src='img/bn3.jpg' width='100%'>
 	</header>
 	<br>
-	
+	<h3 style="font-style:italic;font-weight:bold;color:#89ba16;text-align:center;"> CHI TIẾT VỀ KHÁCH SẠN </h3>
+	<br>
 	<div class='main'>
 		<div class='container'>
 			<div class='row'>
-				<div class='col-md-3'></div>
-				<div class='col-md-3'>
-					<img src='img/about/beboi.jpg' width='100%'>
+				<div class='col-md-1'></div>
+				<div class='col-md-6'>
+					<img src='img/about/nhahang1.jpg' width='100%'>
 				</div>
-				
-				<div class='col-md-6 '>
+			
+				<div class='col-md-5 '>
 					<div class="text">
-						<h3 class="ka-subtitle">Nhà </h3>
-						<p>Nhà hàng ấm cúng với khu vực máy lạnh hoặc ngoài sân vườn, với các món ăn chon lọc thuần túy Việt Nam và các món ăn quốc tế Việt Nam. Nhà hàng phục vụ café, ăn sáng nhẹ, ăn trưa và tối hoặc phục vụ tại phòng.</p>
+						<h3 class="ka-subtitle" style="font-style:italic;">Restaurant </h3>
+						<p>Nhà hàng ấm cúng với khu vực máy lạnh hoặc ngoài sân vườn , với các món ăn chon lọc thuần túy Việt Nam và các món ăn quốc tế Việt Nam. Nhà hàng phục vụ café , ăn sáng nhẹ, ăn trưa và tối hoặc phục vụ tại phòng.</p>
 						<p class="mb-0">
-							<a class="btn btn-readmore" href="about.php" target="_self">Xem Thêm</a>
+							<a class="btn btn-readmore" href="about.php" target="_self">See more</a>
 						</p>
 					</div>
 				</div>
 			</div>
-			
+			<br>
 			<div class='row'>
-				<div class='col-md-6'>
+				<div class='col-md-4'>
 					<div class="text">
-						<h3 class="ka-subtitle">Đặt phòng</h3>
-						<p>Nhà hàng ấm cúng với khu vực máy lạnh hoặc ngoài sân vườn, với các món ăn chon lọc thuần túy Việt Nam và các món ăn quốc tế Việt Nam. Nhà hàng phục vụ café, ăn sáng nhẹ, ăn trưa và tối hoặc phục vụ tại phòng.</p>
+						<h3 class="ka-subtitle" style="font-style:italic;">Room</h3>
+						<p>Đa dạng các loại phòng sẽ phù hợp với nhu cầu của quý khách. Phòng sạch đẹp , rộng rãi , thoáng mát với đầy đủ trang thiết bị.</p>
 						<p class="mb-0">
-							<a class="btn btn-readmore" href="res.php" target="_self">Xem Thêm</a>
+							<a class="btn btn-readmore" href="res.php" target="_self">See more</a>
 						</p>
 					</div>
 				</div>
-				<div class='col-md-3'>
-					<img src='img/about/beboi.jpg' width='100%'>
+				<div class='col-md-8'>
+					<img src='img/about/room1.jpg' width='100%'>
 				</div>				
 				<div class='col-md-3'></div>
 				
-			</div
+</div>
+<br>
 			<div class='row'>
-				<div class='col-md-3'></div>
-				<div class='col-md-3'>
-					<img src='img/about/beboi.jpg' width='100%'>
+				<div class='col-md-1'></div>
+				<div class='col-md-6'>
+					<img src='img/about/pool.jpg' width='100%'>
 				</div>
 				
-				<div class='col-md-6'>
+				<div class='col-md-5'>
 					<div class="text">
-						<h3 class="ka-subtitle">Nhà hàng ẩm thực</h3>
-						<p>Nhà hàng ấm cúng với khu vực máy lạnh hoặc ngoài sân vườn, với các món ăn chon lọc thuần túy Việt Nam và các món ăn quốc tế Việt Nam. Nhà hàng phục vụ café, ăn sáng nhẹ, ăn trưa và tối hoặc phục vụ tại phòng.</p>
+						<h3 class="ka-subtitle" style="font-style:italic;">Pool</h3>
+						<p>Khách sạn có nhiều bể bơi rộng rãi có view hướng ra biển , phù hợp với mọi lứa tuổi.</p>
 						<p class="mb-0">
-							<a class="btn btn-readmore" href="about.php" target="_self">Xem Thêm</a>
+							<a class="btn btn-readmore" href="about.php" target="_self">See more</a>
 						</p>
 					</div>
 				</div>
