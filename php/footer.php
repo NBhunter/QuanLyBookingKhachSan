@@ -11,6 +11,7 @@
   text-align: left;
 }
 #dt4{
+
   text-align: left;
 }
 #n1 a{
@@ -96,16 +97,17 @@ footer{
 		<span><i class="fa-solid fa-chevron-up" style="color:white;font-size:40px;"></i></span>
 	</a>
   <br>
-  <h2 id="n1"><a href="index.php">KIEN AN HOTEL</a></h2>
+  <h3 id="n1"><a href="index.php">KIEN AN HOTEL</a></h3>
   <h5><b>18 UNG VĂN KHIÊM, PHƯỜNG ĐÔNG XUYÊN, TP.LONG XUYÊN, TỈNH AN GIANG</b> </h5>
-  
+  <br>
 	<div class="row">
 		<div class="col-4">
-			<h3 id="dt4" style="height:40px;"><img src="img/logoka.png" width="40px" style="margin-left:10px;"></i> KIEN AN HOTEL</h3>
-			<hr>
-			<p><h5 id="dt5"><b> - Zalo: 0369208649</b></h5></p>
-			<p><h5 id="dt5"><b> - Fb page: KIEN AN HOTEL</b></h5></p>
-			<p><h5 id="dt5"><b> - Email:kienanhotel@gmai.com</b></h5></p>
+			
+			<h3 id="dt4" style="height:40px;margin:0;"><img src="img/logoka.png" width="40px" style="padding:0;"> KIEN AN HOTEL</h3>
+			<hr style="margin:0;">
+			<p><h6 id="dt5"><b> - Zalo: 0369208649</b></h6></p>
+			<p><h6 id="dt5"><b> - Fb page: KIEN AN HOTEL</b></h6></p>
+			<p><h6 id="dt5"><b> - Email:kienanhotel@gmai.com</b></h6></p>
 			
 			<div class="icon-bar">
 				<div class="row" align="center">
@@ -126,21 +128,21 @@ footer{
 		</div>
 		
 		<div class="col-4">
-		  <h2 style="height:40px;">Giờ mở cửa <span class="badge">Mới</span></h2>
-		  <hr>
-		  <p><h5><b><i class="fa fa-clock-o" style="font-size:27px;color:#2c5c2b; width:8%; height:10%;"></i>Mở cửa 24/24 </b></h></p>
-		  <p><h5><b><i class="fa fa-calendar" style="font-size:27px;color:#6C584C; width:8%; height:10%;"></i> Từ Thứ hai đến Chủ Nhật</b></h></p>
-		  <p><h5><b><i class="fa fa-bolt" style="font-size:31px;color:#FFF75E; width:8%; height:10%;"></i> Ưu đãi giảm 10% cho khách hàng mới</b></h></p>
-		  <p><h5><b><i class="fa fa-home" style='font-size:27px; color:#BC4749; width:10%; height:10%;'></i>CN1:25B Đinh Công Tráng, An Nghiệp, Ninh Kiều, Cần Thơ </b></h></p>
+		  <h3 style="height:40px;margin:0;">Giờ mở cửa <span class="badge">Mới</span></h3>
+		  <hr style="margin:0;">
+		  <p><h6><b><i class="fa fa-clock-o" style="font-size:27px;color:#2c5c2b; width:8%; height:10%;"></i>Mở cửa 24/24 </b></h6></p>
+		  <p><h6><b><i class="fa fa-calendar" style="font-size:27px;color:#6C584C; width:8%; height:10%;"></i>Từ Thứ hai đến Chủ Nhật</b></h6></p>
+		  <p><h6><b><i class="fa fa-bolt" style="font-size:31px;color:#FFF75E; width:8%; height:10%;"></i>Ưu đãi giảm 10% cho khách hàng mới</b></h6></p>
+		  <p><h6><b><i class="fa fa-home" style='font-size:27px; color:#BC4749; width:10%; height:10%;'></i>CN1:25B Đinh Công Tráng, An Nghiệp, Ninh Kiều, Cần Thơ </b></h6></p>
 		</div>
 		
 		<div class="col-4">
-			<h3 id="dt5" style="height:40px;"><i class="fa fa-phone" style="font-size:35px;color:green; width:8%; height:10%;"></i>Tổng đài hỗ trợ miễn phí</h3>
-			<hr>
-			<p><h5 id="dt5"><b> - Hỗ trợ đặt phòng: 098675848 (24/24)</b></h></p>
-			<p><h5 id="dt5"><b> - Hỗ trợ tư vấn: 0979519572 (24/24)</b></h></p>
-			<p><h5 id="dt5"><b> - Khiếu Nại: 0369208649 (7h30 - 19h30)</b></h></p>
-			<p><h5 id="dt5"><b> - STK: 1012443822 VCB: THAI HOANG KHANG</b></h></p>
+			<h3 id="dt5" style="height:40px;margin:0;"><i class="fa fa-phone" style="font-size:35px;color:green; width:8%; height:10%;"></i>Tổng đài hỗ trợ miễn phí</h3>
+			<hr style="margin:0;">
+			<p><h6 id="dt5"><b> - Hỗ trợ đặt phòng: 098675848 (24/24)</b></h6></p>
+			<p><h6 id="dt5"><b> - Hỗ trợ tư vấn: 0979519572 (24/24)</b></h6></p>
+			<p><h6 id="dt5"><b> - Khiếu Nại: 0369208649 (7h30 - 19h30)</b></h6></p>
+			<p><h6 id="dt5"><b> - STK: 1012443822 VCB: THAI HOANG KHANG</b></h6></p>
 			<div class="row" style="padding-left:10px;">
 			  <div class="column" style=" font-size:28px; width:10%; height:10%;">
 			   <i class="fa fa-cc-paypal"></i>

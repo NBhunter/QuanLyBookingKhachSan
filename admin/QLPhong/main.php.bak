@@ -6,8 +6,7 @@ $Phong = $DSP->layphongadmin();
 ?>
 <style>
 .bg{
-	background-image: url('../../img/pp.jpg');
-	background-size:fit;
+	background-color:#bed48c;
 	
 }
 .table{

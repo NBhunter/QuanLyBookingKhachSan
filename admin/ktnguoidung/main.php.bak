@@ -5,7 +5,7 @@
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
   background-color: white;">
-  <marquee onmouseover="this.stop();" onmouseout="this.start();"behavior="scroll" direction="left" scrollamount=10>
+  <marquee onmouseover="this.stop();" onmouseout="this.start();"behavior="scroll" direction="left" scrollamount=25>
 <h1 style="color: black; text-align: center; ">Trang quản trị</h1>
 <h3><p style="color: black; text-align: center; ">Xin chào <?php echo $_SESSION["nguoidung"]["hoten"]; ?></p></h3>
 </marquee>

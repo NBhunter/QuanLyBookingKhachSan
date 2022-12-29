@@ -31,7 +31,7 @@
 	background-color: #bed48c;
 	margin: auto;
 	padding: 10px ;
-	border-radius: 3px;
+	border-radius: 5px;
 }
 .check-btn{
 	margin: 10px 0px;
@@ -45,6 +45,9 @@
 	width: 100%;
 	text-transform: capitalize;
 	border-radius: 3px;
+}
+.check-btn:hover{
+	opacity:0.8;
 }
 
 .s-form .form-header {
@@ -134,9 +137,15 @@
 	font-weight: bold;
 }
 
+
 .r-card{
 	border-radius:5px;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.col-sm-4{
+	background-image: url('img/background.jpg');
+	background-repeat:no-repeat;
+	
 }
 </style>
 </head>	
@@ -144,10 +153,11 @@
 <body id="ka" style="background-color: #F9FFEB; ">
 		<?php include 'navbar.php'; ?>
 
-<div class="container"style="background-image: url('img/background.jpg'); " >
+<div class="container"  >
   <div class="row">
-    <div class="col-sm-4">
-		<div class="s-form">
+    <div class="col-sm-4" >
+		
+		<div class="s-form" style="margin-top:10px;">
 			<div class="form-header"><h1>Tìm phòng</h1></div>
 			<form method="post" action = "?action=demo">				
 				<div class='row'>

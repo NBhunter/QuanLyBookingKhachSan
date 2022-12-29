@@ -78,12 +78,13 @@ img{
 		<div class='container'>
 		
 			<div class='row'id="row1">
+
 				<div class='col-md-6'>
 					<img src='img/about/nhahang1.jpg' width='100%'>
 				</div>
 				<div class='col-md-6 '>
 					<div class="row">
-						<div class='col-md-6 '>
+						<div class='col-md-6 ' style="padding:10px;">
 							<div class="text">
 								<h3 class="ka-subtitle" style="font-style:italic;">Restaurant </h3>
 								<p align="justify">Nhà hàng ấm cúng với khu vực máy lạnh hoặc ngoài sân vườn, 
@@ -104,7 +105,7 @@ img{
 				<div class='col-md-6'>
 					<div class="row">
 						<div class='col-md-6 '></div>
-						<div class='col-md-6 '>
+						<div class='col-md-6 ' style="padding:10px;">
 							<div class="text">
 								<h3 class="ka-subtitle" style="font-style:italic;" >Room</h3>
 								<p align="justify">Đa dạng các loại phòng sẽ phù hợp với nhu cầu của quý khách. Phòng sạch đẹp, rộng rãi, thoáng mát với đầy đủ trang thiết bị.</p>
@@ -131,7 +132,7 @@ img{
 				
 				<div class='col-md-6'>
 					<div class="row">
-						<div class='col-md-6 '>
+						<div class='col-md-6 ' style="padding:10px;">
 							<div class="text">
 								<h3 class="ka-subtitle" style="font-style:italic;">Pool</h3>
 								<p align="justify">Khách sạn có nhiều bể bơi rộng rãi có view hướng ra biển, phù hợp với mọi lứa tuổi.</p>

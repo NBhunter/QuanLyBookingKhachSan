@@ -22,8 +22,7 @@
 	width:30px; 
 	font-weight:bold;"
 }
-.submit-btn:hover{	
- 
+.submit-btn:hover{	 
 	background-color:#89ba16;
 	border: 1px solid #89ba16;
 }

@@ -41,7 +41,7 @@ img{
 		<?php include 'navbar.php'; ?>
 
 
-<div class="container">
+<div class="container" style="margin-top:10px;">
   <div class="row">
     <div class="col-sm-4">
       <h2 style="font-style:italic;">CONTACT</h2>

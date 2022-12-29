@@ -5,9 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="icon" type="image/x-icon" href="../img/icon/ad.png">
-	<link href="https://fonts.googleapis.com/css?family=Cardo:700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
+	<link rel="icon" type="image/x-icon" href="../../img/icon/ad.png">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="https://kit.fontawesome.com/97d6784897.js" crossorigin="anonymous"></script>
@@ -17,13 +15,17 @@
 .sidenav {
 	background-color: white; 
 	height: 100%;
+
 }
 @media screen and (max-width: 767px) { .row.content {height: auto;} }
 
 .col-sm-3{
-	font-family: 'Cardo', serif;
+	font-family:Consolas;
 	font-size:15px;
 	font-weight:bold;
+}
+.col-sm-9{
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 .nav>li>a{
 	color:#2c5c2b;
@@ -72,7 +74,7 @@
   <div class="row content">
     <!-- Menu mh lớn -->     
     <div class="col-sm-3 sidenav hidden-xs">
-      <h3 align="center"><span  style="font-weight:bold;">BOOKING</span></h3><br>
+      <h3 align="center"><a href="../../index.php" style="font-weight:bold;color:black"><span></span>BOOKING</a></h3><br>
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="#"></i>Bảng điều khiển </a></li>
         <li><a href=""><i class="fa-solid fa-users"></i> Quản lý tài khoản</a></li>
@@ -82,13 +84,14 @@
       </ul><br>
     </div>
     <!-- Menu mh lớn - kết thúc -->
-    <br>
+
     
     <div class="col-sm-9">
       <div class="container-fluid">  
-        <!-- Thông tin người dùng - sẽ bổ sung ở bài thực hành sau -->          
+        <!-- Thông tin người dùng - sẽ bổ sung ở bài thực hành sau -->        
+		<br>		
         <div class="dropdown" style="text-align: right;">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="font-weight:bold;color:#6A994E;" >
             <span class="glyphicon glyphicon-user"></span> Chào 
 			<?php  if(isset($_SESSION["nguoidung"]))echo $_SESSION["nguoidung"]["hoten"];?>
             <span class="caret"></span>

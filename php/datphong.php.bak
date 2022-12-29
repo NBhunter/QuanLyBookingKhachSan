@@ -11,7 +11,6 @@
 	<link rel="icon" type="image/x-icon" href="img/logoka.png">
 	<title>Khách Sạn giường nằm - KA Hố tèo</title>
 	
-	<link rel="icon" type="image/x-icon" href="">
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Cardo:700" rel="stylesheet">
@@ -46,6 +45,9 @@
 	width: 100%;
 	text-transform: capitalize;
 	border-radius: 3px;
+}
+.check-btn:hover{
+	opacity:0.8;
 }
 
 .s-form .form-header {
@@ -135,20 +137,27 @@
 	font-weight: bold;
 }
 
+
 .r-card{
 	border-radius:5px;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+.col-sm-4{
+	background-image: url('img/background.jpg');
+	background-repeat:no-repeat;
+	
+}
 </style>
 </head>	
-<body id="ka">
+
+<body id="ka" style="background-color: #F9FFEB; ">
 		<?php include 'navbar.php'; ?>
 
-<div class="container">
+<div class="container"  >
   <div class="row">
-  
-    <div class="col-sm-4">
-		<div class="s-form">
+    <div class="col-sm-4" >
+		
+		<div class="s-form" style="margin-top:10px;">
 			<div class="form-header"><h1>Tìm phòng</h1></div>
 			<form method="post" action = "?action=demo">				
 				<div class='row'>
@@ -219,8 +228,8 @@
       <!--<hr class="hidden-sm hidden-md hidden-lg">-->
     </div>
 	
-    <div class="col-sm-8">
-      <h1>Kết quả đồ đó</h1>
+    <div class="col-sm-8" style="background-color:white;">
+      <h1>Kết quả</h1>
 	   <?php
 		foreach($Phong as $p):
 		?>
@@ -264,4 +273,5 @@
 </div>
 
 </body>
+	
 </html>

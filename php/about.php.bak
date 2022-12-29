@@ -31,14 +31,17 @@ img{
 .des p{
 	text-indent:30px;
 	padding-top:10px;
+}#ka{
+
+	background-color: #F9FFEB;
 }
 </style>
 </head>	
-<body id="ka" >
+<body id="ka"  >
 		<?php include 'navbar.php'; ?>
 
 
-<div class="container">
+<div class="container" style="margin:10px;">
   <div class="row">
     <div class="col-sm-4">
       <h2 style="font-style:italic;">CONTACT</h2>
@@ -73,7 +76,7 @@ img{
 			Khách sạn Kiến An không chỉ đáp ứng hoàn hảo nhu cầu nghỉ ngơi của Quý khách mà còn mang đến những giây phút thư giãn giải trí tuyệt vời và để lại dư vị ấn tượng trong văn hóa ẩm thực nơi đây. 
 			Khách sạn là sự kết hợp hài hòa của phong cách mang màu sắc sang trọng, hiện đại và cổ kính bao gồm cả quần thể Nhà hàng, Bể Bơi,
 			sân Tennis và các khu vui chơi giải trí khác được quy tụ trong một khuôn viên rộng lớn gần 15.000 m2 .</p>
-			</div>
+		</div>
       
 	  <h2 style="font-style:italic;">ROOM</h2>
 	  <div class='row'>

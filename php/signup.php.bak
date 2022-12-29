@@ -31,7 +31,7 @@ button{align:center;}
 				<div class="row">
 					<div class="signup-form" style="width:768px;">
 						<div class="form-header">
-							<h1>ĐĂNG KÝ</h1>
+							<h1>Đăng ký</h1>
 						</div>
 						<form method="post" action="?action=xlsignup">
 						<div class="row">

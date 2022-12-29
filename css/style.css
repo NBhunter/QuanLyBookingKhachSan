@@ -203,7 +203,7 @@ li::marker{
 }
 
 #booking {
-	font-family: 'Josefin Sans', sans-serif;
+	font-family: Consolas;
 	background-image: url('../img/background.jpg');
 	background-size: cover;
 	background-position: center;
@@ -234,9 +234,8 @@ li::marker{
 }
 
 .booking-form .form-header h1 {
-	font-family: 'Cardo', serif;
+	font-family: Consolas;
 	font-weight: 700;
-	text-transform: capitalize;
 	font-size: 38px;
 	color: #0c0c09;
 	margin-top: 0;
@@ -358,7 +357,7 @@ li::marker{
 
 /*-------------------------------------------------------*/
 #signin {
-	font-family: 'Josefin Sans', sans-serif;
+	font-family: Consolas;
 	background-image: url('../img/background.jpg');
 	background-size: cover;
 	background-position: center;
@@ -389,9 +388,8 @@ li::marker{
 }
 
 .signin-form .form-header h1 {
-	font-family: 'Cardo', serif;
+	font-family: consolas;
 	font-weight: 700;
-	text-transform: capitalize;
 	font-size: 38px;
 	color: #0c0c09;
 	margin-top: 0;
@@ -476,13 +474,15 @@ li::marker{
 	display: block;
 	font-size: 14px;
 	width: 80%;
-	text-transform: capitalize;
 	border-radius: 3px;
 }
 
+.signin-form .submit-btn:hover {
+background-color:#bed48c;
+}
 /*-------------------------------------------------------*/
 #signup {
-	font-family: 'Josefin Sans', sans-serif;
+	font-family: consolas;
 	background-image: url('../img/background.jpg');
 	background-size: cover;
 	background-position: center;
@@ -513,9 +513,8 @@ li::marker{
 }
 
 .signup-form .form-header h1 {
-	font-family: 'Cardo', serif;
+	font-family:Consolas;
 	font-weight: 700;
-	text-transform: capitalize;
 	font-size: 38px;
 	color: #0c0c09;
 	margin-top: 0;
